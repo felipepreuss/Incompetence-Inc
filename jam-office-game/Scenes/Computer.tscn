@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0bk81s1i22hc"]
+
+[ext_resource type="Texture2D" uid="uid://r7joak4bapwn" path="res://Sprites/screen-export.png" id="1_5cdsj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Screen-export" type="Sprite2D" parent="."]
+position = Vector2(576.5, 327)
+scale = Vector2(0.619892, 0.450413)
+texture = ExtResource("1_5cdsj")

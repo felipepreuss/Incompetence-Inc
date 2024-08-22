@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5i4pcsxamldg"]
+
+[ext_resource type="PackedScene" uid="uid://5wk16vaa67af" path="res://Scenes/bg.tscn" id="1_ciibd"]
+[ext_resource type="Script" path="res://Scenes/officetable.gd" id="1_sl71x"]
+[ext_resource type="Texture2D" uid="uid://ksivh2t4gqjo" path="res://Sprites/cluelessnote.svg" id="2_1rbif"]
+[ext_resource type="Script" path="res://Scenes/cluelessnote.gd" id="4_i1qyt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hov0b"]
+size = Vector2(245.231, 145.936)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_sl71x")
+
+[node name="bg" parent="." instance=ExtResource("1_ciibd")]
+
+[node name="Cluelessnote" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(915, 343)
+rotation = 0.335704
+texture = ExtResource("2_1rbif")
+script = ExtResource("4_i1qyt")
+
+[node name="Area2D" type="Area2D" parent="Cluelessnote"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cluelessnote/Area2D"]
+position = Vector2(0.813293, -0.15741)
+shape = SubResource("RectangleShape2D_hov0b")
+
+[node name="Keyboard" type="Button" parent="."]
+offset_left = 21.0
+offset_top = -85.0
+offset_right = 294.0
+offset_bottom = 137.0
+rotation = 0.28364
+flat = true
+
+[connection signal="pressed" from="Keyboard" to="." method="_on_keyboard_pressed"]
