@@ -19,8 +19,12 @@ func _process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	if Input.is_action_pressed("click"):
 		pressionado = true
+		scale = Vector2(1.12,1.12)
+		$Shadow.visible = true
 	else:
 		pressionado = false
+		scale = Vector2(1,1)
+		$Shadow.visible = false
 	if pressionado:
 		if na_area:
 			position.x= lerpf(position.x,mouse_pos.x,0.1)

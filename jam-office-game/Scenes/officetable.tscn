@@ -26,6 +26,13 @@ script = ExtResource("4_i1qyt")
 position = Vector2(0.813293, -0.15741)
 shape = SubResource("RectangleShape2D_hov0b")
 
+[node name="Shadow" type="ColorRect" parent="Cluelessnote"]
+offset_left = -121.0
+offset_top = 74.0
+offset_right = 122.0
+offset_bottom = 82.0
+color = Color(0.355314, 0.355314, 0.355314, 0.580392)
+
 [node name="Keyboard" type="Button" parent="."]
 offset_left = 21.0
 offset_top = -85.0

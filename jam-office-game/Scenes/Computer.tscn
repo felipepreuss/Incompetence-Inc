@@ -72,8 +72,9 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xjfre")
 
-[node name="Button2" type="Button" parent="Screen-export/CanvasLayer/Panel"]
+[node name="Start" type="Button" parent="Screen-export/CanvasLayer/Panel"]
 texture_filter = 3
+layout_mode = 0
 offset_left = 12.0
 offset_top = 14.0
 offset_right = 79.0
