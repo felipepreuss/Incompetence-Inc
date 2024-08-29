@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5i4pcsxamldg"]
+[gd_scene load_steps=6 format=3 uid="uid://c5i4pcsxamldg"]
 
 [ext_resource type="PackedScene" uid="uid://5wk16vaa67af" path="res://Scenes/bg.tscn" id="1_ciibd"]
 [ext_resource type="Script" path="res://Scenes/officetable.gd" id="1_sl71x"]
+[ext_resource type="PackedScene" uid="uid://b4ph6bvp1jdas" path="res://timer.tscn" id="3_rjkoh"]
 [ext_resource type="Texture2D" uid="uid://6wtc1ju8ikig" path="res://Sprites/prancheta.png" id="3_t5mk1"]
 [ext_resource type="PackedScene" uid="uid://cl1v7w60i67kq" path="res://cluelessnote.tscn" id="4_xa73s"]
 
@@ -26,6 +27,8 @@ rotation = 0.28364
 flat = true
 
 [node name="Cluelessnote" parent="." instance=ExtResource("4_xa73s")]
+
+[node name="Timer" parent="." instance=ExtResource("3_rjkoh")]
 
 [connection signal="pressed" from="Pile" to="." method="_on_pile_pressed"]
 [connection signal="pressed" from="Keyboard" to="." method="_on_keyboard_pressed"]

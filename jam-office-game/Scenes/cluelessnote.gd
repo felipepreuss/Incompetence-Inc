@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name Papel extends Sprite2D
 
 var na_area = false  #se o mouse está na imagem
 var pressionado = false #quando o jogador está com o mouse pressionado 
@@ -20,11 +20,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("click"):
 		pressionado = true
 		scale = Vector2(1.12,1.12)
-		$Shadow.visible = true
+		#$Shadow.visible = true
 	else:
 		pressionado = false
 		scale = Vector2(1,1)
-		$Shadow.visible = false
+		#$Shadow.visible = false
 	if pressionado:
 		if na_area:
 			position.x= lerpf(position.x,mouse_pos.x,0.1)

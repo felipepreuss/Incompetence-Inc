@@ -145,7 +145,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxLine_rm1bw")
 theme_override_styles/hover = SubResource("StyleBoxLine_endiy")
 theme_override_styles/pressed = SubResource("StyleBoxLine_1xotk")
 theme_override_styles/normal = SubResource("StyleBoxLine_h1tif")
-text = "Give up"
+text = "Give up."
 
 [connection signal="pressed" from="VBoxContainer/start_bttn" to="." method="_on_start_bttn_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_bttn" to="." method="_on_quit_bttn_pressed"]

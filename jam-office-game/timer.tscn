@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4ph6bvp1jdas"]
+
+[ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_geu51"]
+
+[node name="Label" type="Label"]
+offset_left = 531.0
+offset_top = 35.0
+offset_right = 808.0
+offset_bottom = 95.0
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("1_geu51")
+theme_override_font_sizes/font_size = 60
+text = "placeholder"
+
+[node name="timeleft" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
