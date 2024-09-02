@@ -1,0 +1,11 @@
+res://Scenes/officetable.tscn
+res://Sprites/ScanLines.gdshader
+res://Scenes/cluelessnote.gd
+res://Scenes/officetable.gd
+res://Scenes/menumain.tscn
+res://menubg.tscn
+res://cluelessnote.tscn
+res://startbar.tscn
+res://timer.tscn
+res://Scenes/bg.tscn
+res://Scenes/Computer.tscn
