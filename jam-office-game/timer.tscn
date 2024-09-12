@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4ph6bvp1jdas"]
+[gd_scene load_steps=3 format=3 uid="uid://b4ph6bvp1jdas"]
 
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_geu51"]
+[ext_resource type="Script" path="res://timeleft.gd" id="2_xpr4m"]
 
 [node name="Label" type="Label"]
 offset_left = 531.0
@@ -15,3 +16,6 @@ text = "placeholder"
 [node name="timeleft" type="Timer" parent="."]
 wait_time = 30.0
 autostart = true
+script = ExtResource("2_xpr4m")
+
+[connection signal="timeout" from="timeleft" to="timeleft" method="_on_timeout"]

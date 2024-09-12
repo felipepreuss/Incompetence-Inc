@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	print(no_corpo)
 	var mouse_pos = get_global_mouse_position()
-	if Input.is_action_pressed("click"):
+	if Input.is_action_pressed("click") && na_area:
 		pressionado = true
 		scale = Vector2(1.12,1.12)
 		#$Shadow.visible = true
