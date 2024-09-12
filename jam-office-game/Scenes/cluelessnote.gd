@@ -15,13 +15,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(no_corpo)
+	print(na_area)
 	var mouse_pos = get_global_mouse_position()
-	if Input.is_action_pressed("click") && na_area:
+	if Input.is_action_pressed("click"):
 		pressionado = true
-		scale = Vector2(1.12,1.12)
+		if na_area:
+			scale = Vector2(1.12,1.12)
 		#$Shadow.visible = true
-	else:
+	if Input.is_action_just_released("click"):
+		seguir = null
+		na_area = false
 		pressionado = false
 		scale = Vector2(1,1)
 		#$Shadow.visible = false
@@ -30,7 +33,7 @@ func _process(delta: float) -> void:
 			position.x= lerpf(position.x,mouse_pos.x,0.1)
 			position.y= lerpf(position.y,mouse_pos.y,0.1)  
 	elif seguir != null:
-		position = seguir.global_position
+		global_position = seguir.global_position
 	if !pressionado:
 		if no_corpo:
 			queue_free()
@@ -38,7 +41,9 @@ func _process(delta: float) -> void:
 	 and mouse_pos.x > position.x - center_offset.x\
 	 and mouse_pos.y < position.y - center_offset.y + tamanho.y\
 	 and mouse_pos.y > position.y - center_offset.y:
-			na_area = true
+		na_area = true
+	elif  !pressionado:
+		na_area = false
 #Lógica do Papel
 	if corpo_pos.x < position.x + tamanho.x - center_offset.x\
 	 and corpo_pos.x > position.x - center_offset.x\
