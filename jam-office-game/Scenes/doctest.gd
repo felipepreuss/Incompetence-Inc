@@ -1,5 +1,9 @@
 extends Papel
 
+@onready var name_label =  $NameLabel
+@onready var item_label = $ItemLabel
+@onready var value_label = $ValueLabel
+@onready var nationality_label = $NationalityLabel
 # Lists of valid and invalid data for customs declarations
 var first_names = ["John", "Jenny", "Barbara", "Tom", "Daphne", "Jimmy", "Sarah", "Brad", "Dale", "Jeff", "Anna", "Lily",
 					"Mieke", "Hannah", "Laurence", "Oliver", "Sofia", "Louis", "Muhammad", "Steffan", "Harry", "Rebecca", "Sebastian",
@@ -23,15 +27,11 @@ var declared_values = [100, 200, 500, 1000, 1500]
 var invalid_declared_values = [-50, 0, 10000]
 
 var difficulty = 0
-var z = 0
-
+ 
 const BASE_FAKE_VALUE = 6
 
 # Declare UI components
-@onready var name_label = $NameLabel
-@onready var item_label = $ItemLabel
-@onready var value_label = $ValueLabel
-@onready var nationality_label = $NationalityLabel
+
 
 # Function to set the difficulty level
 func set_difficulty(new_difficulty):
