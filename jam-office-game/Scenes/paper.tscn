@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcrh34va1t76v"]
+
+[ext_resource type="Texture2D" uid="uid://b6cb6jihmt7nc" path="res://Sprites/doctest.png" id="1_vfc6t"]
+[ext_resource type="Script" path="res://Scenes/doctest.gd" id="2_js6cy"]
+[ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="3_x324e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gofhi"]
+size = Vector2(134, 187)
+
+[node name="Doctest" type="Sprite2D"]
+position = Vector2(71, 94)
+texture = ExtResource("1_vfc6t")
+script = ExtResource("2_js6cy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_gofhi")
+
+[node name="NameLabel" type="Label" parent="."]
+texture_filter = 3
+offset_left = -61.0
+offset_top = -88.0
+offset_right = 51.0
+offset_bottom = -65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_x324e")
+theme_override_font_sizes/font_size = 24
+text = "Name"
+
+[node name="NationalityLabel" type="Label" parent="."]
+texture_filter = 3
+offset_left = -61.0
+offset_top = -61.0
+offset_right = 29.0
+offset_bottom = -38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_x324e")
+theme_override_font_sizes/font_size = 22
+text = "Nationality"
+
+[node name="ItemLabel" type="Label" parent="."]
+texture_filter = 3
+offset_left = -60.0
+offset_top = -38.0
+offset_right = -20.0
+offset_bottom = -15.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_x324e")
+theme_override_font_sizes/font_size = 24
+text = "Item"
+
+[node name="ValueLabel" type="Label" parent="."]
+texture_filter = 3
+offset_left = -61.0
+offset_top = -9.0
+offset_right = -5.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_x324e")
+theme_override_font_sizes/font_size = 24
+text = "Value"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_folder_"]
