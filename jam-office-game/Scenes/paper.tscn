@@ -17,4 +17,32 @@ script = ExtResource("2_js6cy")
 position = Vector2(-2, -0.5)
 shape = SubResource("RectangleShape2D_gofhi")
 
+[node name="NameLabel" type="Label" parent="."]
+offset_left = -61.0
+offset_top = -88.0
+offset_right = 51.0
+offset_bottom = -65.0
+text = "Name"
+
+[node name="NationalityLabel" type="Label" parent="."]
+offset_left = -61.0
+offset_top = -50.0
+offset_right = 20.0
+offset_bottom = -27.0
+text = "Nationality"
+
+[node name="ItemLabel" type="Label" parent="."]
+offset_left = -54.0
+offset_top = -17.0
+offset_right = -14.0
+offset_bottom = 6.0
+text = "Item"
+
+[node name="ValueLabel" type="Label" parent="."]
+offset_left = -56.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = 33.0
+text = "Value"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_folder_"]
