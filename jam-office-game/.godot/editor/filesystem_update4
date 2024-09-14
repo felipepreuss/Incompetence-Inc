@@ -1,4 +1,10 @@
-res://Scenes/officetable.tscn
-res://Sprites/ScanLines.gdshader
-res://Scenes/cluelessnote.gd
 res://Scenes/paper.tscn
+res://Sprites/ScanLines.gdshader
+res://Scenes/officetable.tscn
+res://Scenes/Computer.tscn
+res://Scenes/bg.tscn
+res://timer.tscn
+res://startbar.tscn
+res://cluelessnote.tscn
+res://menubg.tscn
+res://Scenes/menumain.tscn

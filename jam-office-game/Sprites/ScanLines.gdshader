@@ -1,6 +1,6 @@
 shader_type canvas_item;
 uniform float SCREEN_HEIGHT = 648;
- 
+
 void fragment() {
 	int y_index =  int(UV.y * SCREEN_HEIGHT);
 	if (y_index % 2 == 0){
@@ -11,4 +11,4 @@ void fragment() {
 	}// Called for every pixel the material is visible on.
 }
 
- 
+
