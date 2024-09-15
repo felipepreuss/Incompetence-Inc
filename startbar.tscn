@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3hdn478wiys8"]
+
+[ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_46ck5"]
+[ext_resource type="Script" path="res://startbar.gd" id="1_ln0om"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p73qj"]
+bg_color = Color(0.764706, 0.764706, 0.764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6o54"]
+bg_color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[node name="PanelBG" type="Panel"]
+offset_left = 88.0
+offset_top = 287.0
+offset_right = 252.0
+offset_bottom = 543.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p73qj")
+script = ExtResource("1_ln0om")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 37.0
+offset_bottom = 252.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6o54")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 224.0
+offset_right = 212.0
+offset_bottom = 259.0
+rotation = -1.57042
+theme_override_fonts/font = ExtResource("1_46ck5")
+theme_override_font_sizes/font_size = 33
+text = "Incompetech OS"
+vertical_alignment = 1
+
+[node name="Shutdown" type="Button" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 219.0
+offset_right = 159.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("1_46ck5")
+theme_override_font_sizes/font_size = 16
+text = "Shutdown"
+
+[connection signal="pressed" from="Shutdown" to="." method="_on_shutdown_pressed"]
