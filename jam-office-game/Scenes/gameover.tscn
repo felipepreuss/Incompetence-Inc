@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://s1rjcmfgbki1"]
+[gd_scene load_steps=5 format=3 uid="uid://s1rjcmfgbki1"]
 
 [ext_resource type="Script" path="res://Scenes/gameover.gd" id="1_n4bfe"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="2_y52mc"]
+[ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="3_idgfh"]
+[ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="4_08xlg"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -44,5 +46,16 @@ theme_override_fonts/font = ExtResource("2_y52mc")
 theme_override_font_sizes/font_size = 24
 text = "Im done"
 
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_idgfh")
+
+[node name="Pressed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_08xlg")
+volume_db = 24.0
+
+[connection signal="focus_entered" from="Retry" to="." method="_on_retry_focus_entered"]
+[connection signal="mouse_entered" from="Retry" to="." method="_on_retry_mouse_entered"]
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="focus_entered" from="GiveUp" to="." method="_on_give_up_focus_entered"]
+[connection signal="mouse_entered" from="GiveUp" to="." method="_on_give_up_mouse_entered"]
 [connection signal="pressed" from="GiveUp" to="." method="_on_give_up_pressed"]

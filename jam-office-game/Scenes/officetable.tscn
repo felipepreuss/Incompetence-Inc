@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5i4pcsxamldg"]
+[gd_scene load_steps=11 format=3 uid="uid://c5i4pcsxamldg"]
 
 [ext_resource type="PackedScene" uid="uid://5wk16vaa67af" path="res://Scenes/bg.tscn" id="1_ciibd"]
 [ext_resource type="Script" path="res://Scenes/officetable.gd" id="1_sl71x"]
 [ext_resource type="PackedScene" uid="uid://b4ph6bvp1jdas" path="res://timer.tscn" id="3_rjkoh"]
 [ext_resource type="Texture2D" uid="uid://6wtc1ju8ikig" path="res://Sprites/prancheta.png" id="3_t5mk1"]
+[ext_resource type="AudioStream" uid="uid://cm28g8mgq4r4i" path="res://Sound/paper-flutter-5933.mp3" id="4_nyu1s"]
 [ext_resource type="PackedScene" uid="uid://cl1v7w60i67kq" path="res://cluelessnote.tscn" id="4_xa73s"]
 [ext_resource type="Texture2D" uid="uid://cjf3lvuenognj" path="res://Sprites/manilafolder.png" id="6_cj10d"]
+[ext_resource type="AudioStream" uid="uid://ckd0ggngalcn2" path="res://Sound/323387-Manilla_folder_-pages_being_turned_1-.mp3" id="7_kavjq"]
+[ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="8_p7buf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi1oe"]
 size = Vector2(531.291, 289.907)
@@ -22,6 +25,9 @@ offset_right = 446.0
 offset_bottom = 537.0
 rotation = 0.0515293
 texture_normal = ExtResource("3_t5mk1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pile"]
+stream = ExtResource("4_nyu1s")
 
 [node name="Keyboard" type="Button" parent="."]
 offset_left = 21.0
@@ -46,8 +52,22 @@ position = Vector2(0.495444, 6.60837)
 rotation = -0.00102686
 shape = SubResource("RectangleShape2D_pi1oe")
 
+[node name="Inserted" type="AudioStreamPlayer2D" parent="Manilafolder"]
+stream = ExtResource("7_kavjq")
+
 [node name="Cluelessnote" parent="." instance=ExtResource("4_xa73s")]
 position = Vector2(964, 360)
+
+[node name="Money" type="Label" parent="."]
+offset_left = 1012.0
+offset_top = 32.0
+offset_right = 1125.0
+offset_bottom = 84.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("8_p7buf")
+theme_override_font_sizes/font_size = 50
+text = "$0,00"
 
 [connection signal="pressed" from="Pile" to="." method="_on_pile_pressed"]
 [connection signal="pressed" from="Keyboard" to="." method="_on_keyboard_pressed"]

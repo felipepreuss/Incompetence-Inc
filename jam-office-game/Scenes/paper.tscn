@@ -24,6 +24,7 @@ offset_left = -65.5
 offset_top = -90.5
 offset_right = 60.5
 offset_bottom = 84.5
+alignment = 1
 
 [node name="NameLabel" type="Label" parent="V"]
 texture_filter = 3

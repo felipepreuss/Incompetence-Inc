@@ -16,7 +16,7 @@ var invalid_items = ["Firearms", "Illegal Drugs", "Exotic Animals", "Endangered 
 
 var nationalities = ["American", "British", "German", "French", "Chinese", "Indian", "Japanese", "Brazilian", "Canadian", "Australian"]
 
-var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational"]
+var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational", "Carioca"]
 
 var declared_values = [100, 200, 500, 1000, 1500]
 
@@ -66,7 +66,7 @@ func generate_declaration():
 		BASE_FAKE_VALUE + 2:
 			# Incorrect nationality
 			nationality = pick_random_from_list(invalid_nationalities)
-
+	
 	var full_name = first_name + surname
 	var declaration_text = "Name: " + full_name
 	var item_text = "Item: " + item
@@ -78,7 +78,9 @@ func generate_declaration():
 	item_label.text = item_text
 	value_label.text = value_text
 	nationality_label.text = nationality_text
-
+	#if !is_declaration_valid and no_corpo:
+		#get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
+	
 # Helper function to pick a random element from a list
 func pick_random_from_list(list):
 	return list[randi_range(0, list.size() - 1)]
