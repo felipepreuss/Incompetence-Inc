@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://u4eqsr7q5ni3"]
+[gd_scene load_steps=19 format=3 uid="uid://u4eqsr7q5ni3"]
 
 [ext_resource type="PackedScene" uid="uid://cdorjhfxmwu1q" path="res://menubg.tscn" id="1_itqmx"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_nxvfb"]
+[ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="3_evpcx"]
+[ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="3_qdr51"]
 
 [sub_resource type="GDScript" id="GDScript_u4hfk"]
 script/source = "extends Control
@@ -9,10 +11,30 @@ script/source = "extends Control
 
 func _on_start_bttn_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scenes/officetable.tscn\") # Replace with function body.
-
+	
 
 func _on_quit_bttn_pressed() -> void:
 	get_tree().quit() # Replace with function body.
+	
+
+ # Replace with function body.
+
+
+
+func _on_start_bttn_mouse_entered() -> void:
+	$VBoxContainer/Hover.play() # Replace with function body.
+
+
+func _on_quit_bttn_mouse_entered() -> void:
+	$VBoxContainer/Hover.play() # Replace with function body.
+
+
+func _on_start_bttn_focus_entered() -> void:
+	$VBoxContainer/Pressed.play() # Replace with function body.
+
+
+func _on_quit_bttn_focus_entered() -> void:
+	$VBoxContainer/Pressed.play() # Replace with function body.
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqgqr"]
@@ -147,5 +169,16 @@ theme_override_styles/pressed = SubResource("StyleBoxLine_1xotk")
 theme_override_styles/normal = SubResource("StyleBoxLine_h1tif")
 text = "Give up."
 
+[node name="Pressed" type="AudioStreamPlayer2D" parent="VBoxContainer"]
+stream = ExtResource("3_evpcx")
+volume_db = 24.0
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="VBoxContainer"]
+stream = ExtResource("3_qdr51")
+
+[connection signal="focus_entered" from="VBoxContainer/start_bttn" to="." method="_on_start_bttn_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/start_bttn" to="." method="_on_start_bttn_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/start_bttn" to="." method="_on_start_bttn_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/quit_bttn" to="." method="_on_quit_bttn_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/quit_bttn" to="." method="_on_quit_bttn_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/quit_bttn" to="." method="_on_quit_bttn_pressed"]

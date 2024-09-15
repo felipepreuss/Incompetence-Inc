@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(na_area)
+
 	var mouse_pos = get_global_mouse_position()
 	if Input.is_action_pressed("click"):
 		pressionado = true
@@ -53,6 +53,10 @@ func _process(delta: float) -> void:
 			scale = Vector2(0.9,0.9)
 		else:
 			no_corpo = true
+			$"../Manilafolder/Inserted".play()
 
 func _on_body(body: Node2D) -> void:
 	no_corpo = true
+	
+func _off_body(area: Area2D) -> void:
+	no_corpo = false

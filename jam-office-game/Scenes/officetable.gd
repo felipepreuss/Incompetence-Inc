@@ -18,9 +18,10 @@ func _on_keyboard_pressed() -> void:
 
 func timer_text():
 	texto.text = str(floor(time.time_left))
-
+	
 func _on_pile_pressed() -> void:
 	
 	var obtain = document.instantiate()
 	add_child(obtain)
 	obtain.position = stack.position # Replace with function body.
+	$Pile/AudioStreamPlayer2D.play()
