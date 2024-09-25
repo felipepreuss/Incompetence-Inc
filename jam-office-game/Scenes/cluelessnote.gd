@@ -6,7 +6,8 @@ var seguir #quem o objeto vai seguir
 var tamanho : Vector2 #tamanho do sprite
 var center_offset : Vector2 #espaçamento para criar colisão
 var no_corpo = false #Se o papel está na mesma posição da pasta
-@onready var corpo_pos = $"../Manilafolder".global_position #Define a posição do papel pela pasta
+@onready var corpo_pos = $"../Manilafolder".global_position
+@onready var trash_pos = $"../Shredder".global_position#Define a posição do papel pela pasta
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tamanho = Vector2(texture.get_width() * scale.x, texture.get_height() * scale.y)
@@ -54,7 +55,14 @@ func _process(delta: float) -> void:
 		else:
 			no_corpo = true
 			$"../Manilafolder/Inserted".play()
-
+	if trash_pos.x < position.x + tamanho.x - center_offset.x\
+	and trash_pos.x > position.x - center_offset.x\
+	and trash_pos.y < position.y - center_offset.y + tamanho.y\
+	and trash_pos.y > position.y - center_offset.y:
+		if pressionado:
+			scale = Vector2(0.9,0.9)
+		else:
+			no_corpo = true
 func _on_body(body: Node2D) -> void:
 	no_corpo = true
 	

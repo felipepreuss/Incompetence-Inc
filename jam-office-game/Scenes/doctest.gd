@@ -78,7 +78,7 @@ func generate_declaration():
 	item_label.text = item_text
 	value_label.text = value_text
 	nationality_label.text = nationality_text
-	#if !is_declaration_valid and no_corpo:
+#	if !is_declaration_valid and no_corpo:
 		#get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 	
 # Helper function to pick a random element from a list
