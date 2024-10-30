@@ -88,7 +88,8 @@ Archive.org
 Gettyimages
 pngwing
 e todos os outros que não pude listar aqui
-"
+
+Manipulação dos assets por Felipe Preuss"
 
 [node name="credcredre" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hsl5t")
