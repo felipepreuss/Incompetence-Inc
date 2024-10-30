@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cdorjhfxmwu1q" path="res://menubg.tscn" id="1_itqmx"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_nxvfb"]
 [ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="3_evpcx"]
+[ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="3_g8gu3"]
 [ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="3_qdr51"]
 
 [sub_resource type="GDScript" id="GDScript_u4hfk"]
@@ -42,19 +43,6 @@ func _on_cred_bttn_focus_entered() -> void:
 func _on_cred_bttn_mouse_entered() -> void:
 	$VBoxContainer/Hover.play()  # Replace with function body.
 "
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqgqr"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 5
-border_width_right = 3
-border_width_bottom = 1
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 3
-anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_srdbv"]
 
@@ -171,7 +159,7 @@ offset_left = 529.0
 offset_top = 485.0
 offset_right = 632.0
 offset_bottom = 608.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_rqgqr")
+theme_override_styles/panel = ExtResource("3_g8gu3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
