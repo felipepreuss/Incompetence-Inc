@@ -17,7 +17,7 @@ func _on_quit_bttn_pressed() -> void:
 	get_tree().quit() # Replace with function body.
 	
 func _on_cred_bttn_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(\"res://credits.tscn\") # Replace with function body.
 
 func _on_start_bttn_mouse_entered() -> void:
 	$VBoxContainer/Hover.play() # Replace with function body.

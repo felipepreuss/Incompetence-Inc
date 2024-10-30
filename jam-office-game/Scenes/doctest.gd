@@ -48,6 +48,7 @@ func generate_declaration():
 	var item = pick_random_from_list(items)
 	var declared_value = pick_random_from_list(declared_values)
 	var nationality = pick_random_from_list(nationalities)
+	
 
 	
 	var value = randi_range(1, BASE_FAKE_VALUE + 1 + difficulty)
@@ -69,7 +70,7 @@ func generate_declaration():
 		BASE_FAKE_VALUE + 2:
 			# Incorrect nationality
 			nationality = pick_random_from_list(invalid_nationalities)
-	
+	print(item)
 	var full_name = first_name + surname
 	var declaration_text = "Name: " + full_name
 	var item_text = "Item: " + item

@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 	if !pressionado:
 		if no_corpo:
 			queue_free()
+		 
 	if mouse_pos.x < position.x + tamanho.x - center_offset.x\
 	 and mouse_pos.x > position.x - center_offset.x\
 	 and mouse_pos.y < position.y - center_offset.y + tamanho.y\
