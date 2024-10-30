@@ -49,13 +49,16 @@ func generate_declaration():
 	var declared_value = pick_random_from_list(declared_values)
 	var nationality = pick_random_from_list(nationalities)
 
-	var is_declaration_valid = true
+	
 	var value = randi_range(1, BASE_FAKE_VALUE + 1 + difficulty)
+	print(is_declaration_valid)
 
-	# Randomly decide if the declaration will be incorrect
-	if value >= BASE_FAKE_VALUE:
+	if invalid_items.has(item) or invalid_nationalities.has(nationality):
 		is_declaration_valid = false
-
+	# Randomly decide if the declaration will be incorrect
+	#if value >= BASE_FAKE_VALUE:
+		#is_declaration_valid = false
+	
 	match value:
 		BASE_FAKE_VALUE:
 			# Incorrect item
@@ -78,8 +81,7 @@ func generate_declaration():
 	item_label.text = item_text
 	value_label.text = value_text
 	nationality_label.text = nationality_text
-#	if !is_declaration_valid and no_corpo:
-		#get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
+	
 	
 # Helper function to pick a random element from a list
 func pick_random_from_list(list):

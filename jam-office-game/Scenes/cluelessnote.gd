@@ -6,6 +6,7 @@ var seguir #quem o objeto vai seguir
 var tamanho : Vector2 #tamanho do sprite
 var center_offset : Vector2 #espaçamento para criar colisão
 var no_corpo = false #Se o papel está na mesma posição da pasta
+var is_declaration_valid = true
 @onready var corpo_pos = $"../Manilafolder".global_position
 @onready var trash_pos = $"../Shredder".global_position#Define a posição do papel pela pasta
 # Called when the node enters the scene tree for the first time.

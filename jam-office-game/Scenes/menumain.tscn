@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://u4eqsr7q5ni3"]
+[gd_scene load_steps=26 format=3 uid="uid://u4eqsr7q5ni3"]
 
 [ext_resource type="PackedScene" uid="uid://cdorjhfxmwu1q" path="res://menubg.tscn" id="1_itqmx"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_nxvfb"]
@@ -16,10 +16,8 @@ func _on_start_bttn_pressed() -> void:
 func _on_quit_bttn_pressed() -> void:
 	get_tree().quit() # Replace with function body.
 	
-
- # Replace with function body.
-
-
+func _on_cred_bttn_pressed() -> void:
+	pass # Replace with function body.
 
 func _on_start_bttn_mouse_entered() -> void:
 	$VBoxContainer/Hover.play() # Replace with function body.
@@ -35,6 +33,14 @@ func _on_start_bttn_focus_entered() -> void:
 
 func _on_quit_bttn_focus_entered() -> void:
 	$VBoxContainer/Pressed.play() # Replace with function body.
+
+
+func _on_cred_bttn_focus_entered() -> void:
+	$VBoxContainer/Pressed.play() # Replace with function body.
+
+
+func _on_cred_bttn_mouse_entered() -> void:
+	$VBoxContainer/Hover.play()  # Replace with function body.
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqgqr"]
@@ -76,6 +82,35 @@ grow_begin = 0.0
 grow_end = 0.0
 thickness = 6
 vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_te7ex"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sr58o"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jo2fc"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_x5umu"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_l2617"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_o8a1f"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gfr3a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3vq7"]
 
@@ -135,7 +170,7 @@ layout_mode = 0
 offset_left = 529.0
 offset_top = 485.0
 offset_right = 632.0
-offset_bottom = 575.0
+offset_bottom = 608.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rqgqr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -156,6 +191,19 @@ theme_override_styles/hover = SubResource("StyleBoxLine_eyar5")
 theme_override_styles/pressed = SubResource("StyleBoxLine_8a18n")
 theme_override_styles/normal = SubResource("StyleBoxLine_4tquf")
 text = "Work."
+
+[node name="cred_bttn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nxvfb")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_te7ex")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxLine_sr58o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxLine_jo2fc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxLine_x5umu")
+theme_override_styles/hover = SubResource("StyleBoxLine_l2617")
+theme_override_styles/pressed = SubResource("StyleBoxLine_o8a1f")
+theme_override_styles/normal = SubResource("StyleBoxLine_gfr3a")
+text = "Credits"
 
 [node name="quit_bttn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -179,6 +227,9 @@ stream = ExtResource("3_qdr51")
 [connection signal="focus_entered" from="VBoxContainer/start_bttn" to="." method="_on_start_bttn_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/start_bttn" to="." method="_on_start_bttn_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/start_bttn" to="." method="_on_start_bttn_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/cred_bttn" to="." method="_on_cred_bttn_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/cred_bttn" to="." method="_on_cred_bttn_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/cred_bttn" to="." method="_on_cred_bttn_pressed"]
 [connection signal="focus_entered" from="VBoxContainer/quit_bttn" to="." method="_on_quit_bttn_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/quit_bttn" to="." method="_on_quit_bttn_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/quit_bttn" to="." method="_on_quit_bttn_pressed"]
