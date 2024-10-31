@@ -18,7 +18,7 @@ var nationalities = ["American", "British", "German", "French", "Chinese", "Indi
 
 var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational", "Carioca"]
 
-var declared_values = [100, 200, 500, 1000, 1500]
+
 
 var invalid_declared_values = [-50, 0, 10000]
 
@@ -46,13 +46,11 @@ func generate_declaration():
 	var first_name = pick_random_from_list(first_names) + " "
 	var surname = pick_random_from_list(surnames)
 	var item = pick_random_from_list(items)
-	var declared_value = pick_random_from_list(declared_values)
+	var declared_value = pick_random_from_list(Global.declared_values)
 	var nationality = pick_random_from_list(nationalities)
-
 	
 	
 	var value = randi_range(1, BASE_FAKE_VALUE + 1 + difficulty)
-
 	# Randomly decide if the declaration will be incorrect
 	#if value >= BASE_FAKE_VALUE:
 		#is_declaration_valid = false
@@ -74,7 +72,7 @@ func generate_declaration():
 	var value_text = "Declared Value: $" + str(declared_value)
 	var nationality_text = "Nationality: " + nationality
 	
-	if invalid_items.has(item) or invalid_nationalities.has(nationality):
+	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(value):
 		is_declaration_valid = false
 
 	# Update text fields with generated data
@@ -82,7 +80,7 @@ func generate_declaration():
 	item_label.text = item_text
 	value_label.text = value_text
 	nationality_label.text = nationality_text
-	
+	Global.valor = declared_value
 # Helper function to pick a random element from a list
 func pick_random_from_list(list):
 	return list[randi_range(0, list.size() - 1)]

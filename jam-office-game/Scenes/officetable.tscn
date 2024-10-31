@@ -63,9 +63,9 @@ stream = ExtResource("7_kavjq")
 position = Vector2(964, 360)
 
 [node name="Money" type="Label" parent="."]
-offset_left = 1012.0
+offset_left = 912.0
 offset_top = 32.0
-offset_right = 1125.0
+offset_right = 1025.0
 offset_bottom = 84.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9

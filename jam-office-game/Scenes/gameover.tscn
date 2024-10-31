@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://s1rjcmfgbki1"]
+[gd_scene load_steps=8 format=3 uid="uid://s1rjcmfgbki1"]
 
 [ext_resource type="Script" path="res://Scenes/gameover.gd" id="1_n4bfe"]
 [ext_resource type="PackedScene" uid="uid://dg31fk3md4tee" path="res://Scenes/gameoverbgimg.tscn" id="2_qisb1"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="3_idgfh"]
 [ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="4_03a41"]
 [ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="4_08xlg"]
+[ext_resource type="AudioStream" uid="uid://bn1pfooptr5t4" path="res://Sound/realm-of-the-mad-god-death-sound.mp3" id="7_y0wdt"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -127,6 +128,10 @@ theme_override_styles/pressed = ExtResource("4_03a41")
 theme_override_styles/normal_mirrored = ExtResource("4_03a41")
 theme_override_styles/normal = ExtResource("4_03a41")
 text = "Main menu"
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_y0wdt")
+volume_db = 10.894
 
 [connection signal="focus_entered" from="Retry" to="." method="_on_retry_focus_entered"]
 [connection signal="mouse_entered" from="Retry" to="." method="_on_retry_mouse_entered"]

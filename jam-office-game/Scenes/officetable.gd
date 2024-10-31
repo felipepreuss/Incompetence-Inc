@@ -6,9 +6,9 @@ var document= preload("res://Scenes/paper.tscn")
 @onready var texto = $Timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
+	pass
+func _physics_process(delta: float) -> void:
+	$Money.text = str("$",Global.dinheiro,",00")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer_text()
