@@ -6,7 +6,9 @@ var seguir #quem o objeto vai seguir
 var tamanho : Vector2 #tamanho do sprite
 var center_offset : Vector2 #espaçamento para criar colisão
 var no_corpo = false #Se o papel está na mesma posição da pasta
+
 var is_declaration_valid = true
+
 @onready var corpo_pos = $"../Manilafolder".global_position
 @onready var trash_pos = $"../Shredder".global_position#Define a posição do papel pela pasta
 # Called when the node enters the scene tree for the first time.
@@ -38,8 +40,9 @@ func _process(delta: float) -> void:
 		global_position = seguir.global_position
 	if !pressionado:
 		if no_corpo:
-			queue_free()
-		 
+			queue_free()	
+			if !is_declaration_valid:
+				get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 	if mouse_pos.x < position.x + tamanho.x - center_offset.x\
 	 and mouse_pos.x > position.x - center_offset.x\
 	 and mouse_pos.y < position.y - center_offset.y + tamanho.y\
