@@ -72,7 +72,7 @@ func generate_declaration():
 	var value_text = "Declared Value: $" + str(declared_value)
 	var nationality_text = "Nationality: " + nationality
 	
-	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(value):
+	if invalid_items.has(item) or invalid_nationalities.has(nationality):
 		is_declaration_valid = false
 
 	# Update text fields with generated data
