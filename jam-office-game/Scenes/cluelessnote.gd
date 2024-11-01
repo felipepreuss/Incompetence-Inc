@@ -6,7 +6,8 @@ var seguir #quem o objeto vai seguir
 var tamanho : Vector2 #tamanho do sprite
 var center_offset : Vector2 #espaçamento para criar colisão
 var no_corpo = false #Se o papel está na mesma posição da pasta
-
+var no_trash = false #Se o papel foi descartado
+@onready var tempo = $"../Timer/timeleft"
 var is_declaration_valid = true
 
 @onready var corpo_pos = $"../Manilafolder".global_position
@@ -45,6 +46,13 @@ func _process(delta: float) -> void:
 				get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 			elif is_declaration_valid:
 				Global.dinheiro += Global.valor
+				tempo.start(tempo.time_left + randi_range(1,6))
+		if no_trash:
+			queue_free()
+			if is_declaration_valid:
+				get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
+			elif !is_declaration_valid:
+				tempo.start(tempo.time_left + randi_range(1,6))
 	if mouse_pos.x < position.x + tamanho.x - center_offset.x\
 	 and mouse_pos.x > position.x - center_offset.x\
 	 and mouse_pos.y < position.y - center_offset.y + tamanho.y\
@@ -69,9 +77,14 @@ func _process(delta: float) -> void:
 		if pressionado:
 			scale = Vector2(0.9,0.9)
 		else:
-			no_corpo = true
+			no_trash = true
 func _on_body(body: Node2D) -> void:
-	no_corpo = true
-	
+	if body.is_in_group("Folder"):
+		no_corpo = true
+	elif body.is_in_group("Lixo"):
+		no_trash = true
 func _off_body(area: Area2D) -> void:
-	no_corpo = false
+	if area.is_in_group("Folder"):
+		no_corpo = false
+	elif area.is_in_group("Lixo"):
+		no_trash = false
