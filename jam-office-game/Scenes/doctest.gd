@@ -12,11 +12,11 @@ var surnames = ["Peterson", "Bacon", "Liebermann", "Brown", "Woodson", "Rodrigue
 
 var items = ["Laptop", "Clothes", "Souvenirs", "Food Items", "Medicines", "Electronics", "Jewelry", "Sports Equipment", "Toys", "Books"]
 
-var invalid_items = ["Firearms", "Illegal Drugs", "Exotic Animals", "Endangered Species Products", "Explosives"]
+var invalid_items = ["Firearms", "Illegal Drugs", "Exotic Animals", "Endangered Species", "Explosive Device"]
 
 var nationalities = ["American", "British", "German", "French", "Chinese", "Indian", "Japanese", "Brazilian", "Canadian", "Australian"]
 
-var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational", "Carioca"]
+var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational", "Carioca", "Corinthians", "Indn"]
 
 
 

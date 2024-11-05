@@ -33,14 +33,6 @@ texture_normal = ExtResource("3_t5mk1")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pile"]
 stream = ExtResource("4_nyu1s")
 
-[node name="Keyboard" type="Button" parent="."]
-offset_left = 21.0
-offset_top = -85.0
-offset_right = 294.0
-offset_bottom = 137.0
-rotation = 0.28364
-flat = true
-
 [node name="Timer" parent="." instance=ExtResource("3_rjkoh")]
 
 [node name="Manilafolder" type="Sprite2D" parent="."]
@@ -85,7 +77,6 @@ position = Vector2(-8.98206, -156.655)
 shape = SubResource("RectangleShape2D_dvbko")
 
 [connection signal="pressed" from="Pile" to="." method="_on_pile_pressed"]
-[connection signal="pressed" from="Keyboard" to="." method="_on_keyboard_pressed"]
 [connection signal="area_entered" from="Manilafolder/Area2D" to="Cluelessnote" method="_on_body"]
 [connection signal="area_exited" from="Manilafolder/Area2D" to="Cluelessnote" method="_off_body"]
 [connection signal="area_entered" from="Shredder/Area2D" to="Cluelessnote" method="_on_body"]
