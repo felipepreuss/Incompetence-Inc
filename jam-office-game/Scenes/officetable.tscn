@@ -36,16 +36,16 @@ stream = ExtResource("4_nyu1s")
 [node name="Timer" parent="." instance=ExtResource("3_rjkoh")]
 
 [node name="Manilafolder" type="Sprite2D" parent="."]
-position = Vector2(620, 434)
-rotation = -0.179419
+position = Vector2(814, 633)
+rotation = -0.00849046
 scale = Vector2(0.545213, 0.622581)
 texture = ExtResource("6_cj10d")
 
 [node name="Area2D" type="Area2D" parent="Manilafolder" groups=["Folder"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Manilafolder/Area2D"]
-position = Vector2(0.495444, 6.60837)
-rotation = -0.00102686
+position = Vector2(0.495422, 6.6084)
+rotation = -0.00102685
 shape = SubResource("RectangleShape2D_pi1oe")
 
 [node name="Inserted" type="AudioStreamPlayer2D" parent="Manilafolder"]
