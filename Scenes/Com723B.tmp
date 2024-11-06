@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://c0bk81s1i22hc"]
+
+[ext_resource type="Texture2D" uid="uid://r7joak4bapwn" path="res://Sprites/screen-export.png" id="1_5cdsj"]
+[ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="2_cs36i"]
+[ext_resource type="Texture2D" uid="uid://wvq0gg2r63ju" path="res://Sprites/PatchRegular.png" id="2_ekcbw"]
+[ext_resource type="Shader" path="res://Sprites/ScanLines.gdshader" id="3_i66bo"]
+[ext_resource type="Texture2D" uid="uid://u3tyurhnpf6n" path="res://Sprites/PatchInverted.png" id="3_kf6rk"]
+[ext_resource type="Texture2D" uid="uid://cufkccr65bu5r" path="res://Sprites/mailhove.png" id="6_d3inc"]
+[ext_resource type="Texture2D" uid="uid://b1juyiy7ls6mk" path="res://Sprites/MAIL.png" id="6_w0bqq"]
+[ext_resource type="Script" path="res://Scenes/menu_button.gd" id="8_dre5c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6h3d"]
+shader = ExtResource("3_i66bo")
+shader_parameter/SCREEN_HEIGHT = 648.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjfre"]
+bg_color = Color(0.764706, 0.764706, 0.764706, 1)
+border_width_top = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qtjh"]
+texture = ExtResource("3_kf6rk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6jt4h"]
+texture = ExtResource("2_ekcbw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pkssh"]
+texture = ExtResource("3_kf6rk")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67kl1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwts1"]
+texture = ExtResource("6_d3inc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8j5q"]
+texture = ExtResource("6_w0bqq")
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Screen-export" type="Sprite2D" parent="."]
+position = Vector2(576.5, 327)
+scale = Vector2(0.619892, 0.450413)
+texture = ExtResource("1_5cdsj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Screen-export"]
+
+[node name="ColorRect" type="ColorRect" parent="Screen-export/CanvasLayer"]
+offset_left = 89.0
+offset_top = 71.0
+offset_right = 1075.0
+offset_bottom = 592.0
+color = Color(0, 0.501961, 0.501961, 1)
+
+[node name="StatLine" type="ColorRect" parent="Screen-export/CanvasLayer"]
+material = SubResource("ShaderMaterial_n6h3d")
+offset_left = 89.0
+offset_top = 73.0
+offset_right = 1076.0
+offset_bottom = 594.0
+
+[node name="Taskbar" type="Panel" parent="Screen-export/CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = -110.0
+offset_right = -76.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xjfre")
+
+[node name="Start" type="Button" parent="Screen-export/CanvasLayer/Taskbar"]
+texture_filter = 3
+layout_mode = 0
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 79.0
+offset_bottom = 54.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cs36i")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxTexture_2qtjh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6jt4h")
+text = "Start"
+
+[node name="Time" type="Panel" parent="Screen-export/CanvasLayer"]
+texture_filter = 3
+offset_left = 949.0
+offset_top = 551.0
+offset_right = 1063.0
+offset_bottom = 591.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pkssh")
+
+[node name="Label" type="Label" parent="Screen-export/CanvasLayer/Time"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cs36i")
+theme_override_font_sizes/font_size = 32
+text = "3:15pm"
+
+[node name="Button" type="Button" parent="Screen-export/CanvasLayer"]
+texture_filter = 3
+offset_left = 143.0
+offset_top = 108.0
+offset_right = 213.0
+offset_bottom = 151.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_67kl1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iwts1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a8j5q")
+
+[node name="Label" type="Label" parent="Screen-export/CanvasLayer/Button"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 51.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_cs36i")
+theme_override_font_sizes/font_size = 23
+text = "Mail"
+horizontal_alignment = 1
+
+[node name="MenuButton" type="MenuButton" parent="Screen-export/CanvasLayer"]
+offset_left = 567.0
+offset_top = 371.0
+offset_right = 634.0
+offset_bottom = 408.0
+flat = false
+script = ExtResource("8_dre5c")
