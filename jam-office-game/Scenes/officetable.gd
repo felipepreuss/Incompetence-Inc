@@ -13,8 +13,8 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	timer_text()
 
-func _on_keyboard_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Computer.tscn") # Replace with function body.
+#func _on_keyboard_pressed() -> void:
+	#get_tree().change_scene_to_file("res://Scenes/Computer.tscn") # Replace with function body.
 
 func timer_text():
 	texto.text = str(floor(time.time_left))
