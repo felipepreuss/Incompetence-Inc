@@ -26,6 +26,7 @@ var difficulty = 0
  
 const BASE_FAKE_VALUE = 6
 
+var piscou = 0
 # Declare UI components
 @onready var name_label =  $V/NameLabel
 @onready var item_label = $V/ItemLabel
@@ -91,7 +92,11 @@ func _on_modulated_timeout() -> void:
 
 
 func _on_pisca_timeout() -> void:
+	piscou += 1
 	if modulate.a <= 0.7:
 		modulate.a += 0.1
 	else:
 		modulate.a -= 0.1
+	if piscou >= 4:
+		queue_free()
+		Global.dinheiro -= 300
