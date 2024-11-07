@@ -20,7 +20,7 @@ var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNationa
 
 
 
-var invalid_declared_values = [-50, 0, 1000]
+var invalid_declared_values = [-50, 0]
 
 var difficulty = 0
  
