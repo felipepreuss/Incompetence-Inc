@@ -9,8 +9,8 @@ var no_corpo = false #Se o papel está na mesma posição da pasta
 var no_trash = false #Se o papel foi descartado
 @onready var tempo = $"../Timer/timeleft"
 var is_declaration_valid = true
-@onready var corpo_pos = $"../Manilafolder".global_position
-@onready var trash_pos = $"../Shredder".global_position#Define a posição do papel pela pasta
+@onready var corpo_pos = $"../Manilafolder".global_position #Define a posição do papel pela pasta
+@onready var trash_pos = $"../Shredder".global_position
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tamanho = Vector2(texture.get_width() * scale.x, texture.get_height() * scale.y)

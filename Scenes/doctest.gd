@@ -36,7 +36,7 @@ func _draw() -> void:
 
 func filter_function():
 	generate_declaration()
-	set_difficulty(2)
+	set_difficulty(1)
 # Function to set the difficulty level
 func set_difficulty(new_difficulty):
 	difficulty = new_difficulty
@@ -84,3 +84,14 @@ func generate_declaration():
 # Helper function to pick a random element from a list
 func pick_random_from_list(list):
 	return list[randi_range(0, list.size() - 1)]
+
+
+func _on_modulated_timeout() -> void:
+	$Pisca.start()
+
+
+func _on_pisca_timeout() -> void:
+	if modulate.a <= 0.7:
+		modulate.a += 0.1
+	else:
+		modulate.a -= 0.1
