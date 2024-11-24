@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="8_p7buf"]
 [ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="8_sqhp1"]
 [ext_resource type="FontFile" uid="uid://c6dv2q4s6gd5p" path="res://Sprites/Fpreuss.tres" id="10_dqhun"]
-[ext_resource type="Texture2D" uid="uid://dfceejiavbvjd" path="res://Sprites/Paper-Shredder-Transparent.png" id="10_w28pq"]
+[ext_resource type="Texture2D" uid="uid://fgjdy2byroqi" path="res://Sprites/REJECTED-export-export.png" id="11_o1aol"]
 [ext_resource type="PackedScene" uid="uid://d16oretb0nrtd" path="res://data.tscn" id="12_ta2wu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_og1ti"]
@@ -20,7 +20,7 @@ outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi1oe"]
-size = Vector2(531.291, 289.907)
+size = Vector2(314.091, 193.372)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6l05y"]
 font = ExtResource("10_dqhun")
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvbko"]
-size = Vector2(490.045, 333.31)
+size = Vector2(312.511, 138.631)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sl71x")
@@ -44,11 +44,11 @@ script = ExtResource("1_sl71x")
 [node name="bg" parent="." instance=ExtResource("1_ciibd")]
 
 [node name="Pile" type="TextureButton" parent="."]
-offset_left = 260.0
-offset_top = 242.0
-offset_right = 446.0
-offset_bottom = 537.0
-rotation = 0.0515293
+offset_left = 268.0
+offset_top = 182.0
+offset_right = 454.0
+offset_bottom = 477.0
+rotation = 0.00118382
 texture_normal = ExtResource("3_t5mk1")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pile"]
@@ -56,14 +56,17 @@ stream = ExtResource("4_nyu1s")
 
 [node name="DelayText" type="Label" parent="Pile"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 76.7929
+offset_top = 149.394
+offset_right = 116.793
+offset_bottom = 180.394
 label_settings = SubResource("LabelSettings_og1ti")
 
 [node name="Timer" parent="." instance=ExtResource("3_rjkoh")]
 
 [node name="Manilafolder" type="Sprite2D" parent="."]
-position = Vector2(756, 640)
+texture_filter = 3
+position = Vector2(764, 593)
 rotation = -0.00849046
 scale = Vector2(0.545213, 0.622581)
 texture = ExtResource("6_cj10d")
@@ -71,8 +74,9 @@ texture = ExtResource("6_cj10d")
 [node name="Area2D" type="Area2D" parent="Manilafolder" groups=["Folder"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Manilafolder/Area2D"]
-position = Vector2(0.495422, 6.6084)
+position = Vector2(-0.0778046, 8.03082)
 rotation = -0.00102685
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pi1oe")
 
 [node name="Inserted" type="AudioStreamPlayer2D" parent="Manilafolder"]
@@ -106,14 +110,15 @@ theme_override_font_sizes/font_size = 50
 text = "$0,00"
 
 [node name="Shredder" type="Sprite2D" parent="."]
-position = Vector2(380.812, 645.125)
-scale = Vector2(0.424451, 0.260199)
-texture = ExtResource("10_w28pq")
+texture_filter = 3
+position = Vector2(382, 572)
+scale = Vector2(0.5, 0.544)
+texture = ExtResource("11_o1aol")
 
 [node name="Area2D" type="Area2D" parent="Shredder" groups=["Lixo"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shredder/Area2D"]
-position = Vector2(-8.98206, -156.655)
+position = Vector2(7.74438, -87.6975)
 shape = SubResource("RectangleShape2D_dvbko")
 
 [node name="Delay" type="Timer" parent="."]
@@ -124,6 +129,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Canvas" parent="." instance=ExtResource("12_ta2wu")]
+
+[node name="Color" parent="Canvas" index="0"]
+visible = false
 
 [connection signal="pressed" from="Pile" to="." method="_on_pile_pressed"]
 [connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
