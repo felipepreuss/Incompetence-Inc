@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5wk16vaa67af"]
 
-[ext_resource type="Texture2D" uid="uid://bh2skgj0xsq6b" path="res://Sprites/office_desk.svg" id="1_pkmyc"]
+[ext_resource type="Texture2D" uid="uid://cc13niupp88y1" path="res://Sprites/NEWBG.png" id="1_s6nvv"]
 
 [node name="bg" type="Node2D"]
 metadata/_edit_group_ = true
@@ -9,5 +9,5 @@ metadata/_edit_group_ = true
 texture_filter = 3
 texture_repeat = 3
 position = Vector2(577.5, 327.5)
-scale = Vector2(1.88725, 1.58578)
-texture = ExtResource("1_pkmyc")
+scale = Vector2(2, 2)
+texture = ExtResource("1_s6nvv")
