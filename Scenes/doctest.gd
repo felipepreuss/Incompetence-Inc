@@ -28,10 +28,10 @@ const BASE_FAKE_VALUE = 6
 
 var piscou = 0
 # Declare UI components
-@onready var name_label =  $V/NameLabel
-@onready var item_label = $V/ItemLabel
-@onready var value_label = $V/ValueLabel
-@onready var nationality_label = $V/NationalityLabel
+@onready var name_label = $NameLabel
+@onready var item_label = $ItemLabel
+@onready var value_label = $ValueLabel
+@onready var nationality_label = $NationalityLabel
 func _draw() -> void:
 	filter_function()
 
@@ -68,10 +68,10 @@ func generate_declaration():
 			nationality = pick_random_from_list(invalid_nationalities)
 	
 	var full_name = first_name + surname
-	var declaration_text = "Name: " + full_name
-	var item_text = "Item: " + item
-	var value_text = "Declared Value: $" + str(declared_value)
-	var nationality_text = "Nationality: " + nationality
+	var declaration_text = full_name
+	var item_text =  item
+	var value_text = "$" + str(declared_value)
+	var nationality_text =  nationality
 	
 	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(declared_value):
 		is_declaration_valid = false

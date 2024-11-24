@@ -76,7 +76,6 @@ texture = ExtResource("6_cj10d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Manilafolder/Area2D"]
 position = Vector2(-0.0778046, 8.03082)
 rotation = -0.00102685
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pi1oe")
 
 [node name="Inserted" type="AudioStreamPlayer2D" parent="Manilafolder"]
