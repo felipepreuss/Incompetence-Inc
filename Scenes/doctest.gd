@@ -95,8 +95,9 @@ func _on_pisca_timeout() -> void:
 	piscou += 1
 	if modulate.a <= 0.7:
 		modulate.a += 0.1
-	else:
+	elif modulate.a >= 0.7:
+		
 		modulate.a -= 0.1
-	if piscou >= 4:
+	if piscou >= 25:
 		queue_free()
 		Global.dinheiro -= 300

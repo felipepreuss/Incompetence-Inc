@@ -1,4 +1,9 @@
 Timer
-Label
+AnimationPlayer
 ColorRect
+CanvasLayer
+Button
+VBoxContainer
+Label
 Panel
+TextureRect

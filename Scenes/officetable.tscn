@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5i4pcsxamldg"]
+[gd_scene load_steps=18 format=3 uid="uid://c5i4pcsxamldg"]
 
 [ext_resource type="PackedScene" uid="uid://5wk16vaa67af" path="res://Scenes/bg.tscn" id="1_ciibd"]
 [ext_resource type="Script" path="res://Scenes/officetable.gd" id="1_sl71x"]
@@ -8,14 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://cjf3lvuenognj" path="res://Sprites/manilafolder.png" id="6_cj10d"]
 [ext_resource type="AudioStream" uid="uid://ckd0ggngalcn2" path="res://Sound/323387-Manilla_folder_-pages_being_turned_1-.mp3" id="7_kavjq"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="8_p7buf"]
+[ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="8_sqhp1"]
 [ext_resource type="FontFile" uid="uid://c6dv2q4s6gd5p" path="res://Sprites/Fpreuss.tres" id="10_dqhun"]
 [ext_resource type="Texture2D" uid="uid://dfceejiavbvjd" path="res://Sprites/Paper-Shredder-Transparent.png" id="10_w28pq"]
+[ext_resource type="PackedScene" uid="uid://d16oretb0nrtd" path="res://data.tscn" id="12_ta2wu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_og1ti"]
+font = ExtResource("10_dqhun")
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi1oe"]
 size = Vector2(531.291, 289.907)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvbko"]
-size = Vector2(490.045, 333.31)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6l05y"]
 font = ExtResource("10_dqhun")
@@ -26,9 +31,12 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="GDScript" id="GDScript_4qdpb"]
 script/source = "extends Label
 
-func _ready() -> void:
+func _physics_process(delta: float) -> void:
 	text = str(\"Day \",Global.dia)
 "
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvbko"]
+size = Vector2(490.045, 333.31)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sl71x")
@@ -46,10 +54,16 @@ texture_normal = ExtResource("3_t5mk1")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pile"]
 stream = ExtResource("4_nyu1s")
 
+[node name="DelayText" type="Label" parent="Pile"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_og1ti")
+
 [node name="Timer" parent="." instance=ExtResource("3_rjkoh")]
 
 [node name="Manilafolder" type="Sprite2D" parent="."]
-position = Vector2(814, 633)
+position = Vector2(756, 640)
 rotation = -0.00849046
 scale = Vector2(0.545213, 0.622581)
 texture = ExtResource("6_cj10d")
@@ -64,11 +78,27 @@ shape = SubResource("RectangleShape2D_pi1oe")
 [node name="Inserted" type="AudioStreamPlayer2D" parent="Manilafolder"]
 stream = ExtResource("7_kavjq")
 
+[node name="Day" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 923.0
+offset_top = 503.0
+offset_right = 1143.0
+offset_bottom = 643.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("8_sqhp1")
+text = "
+"
+label_settings = SubResource("LabelSettings_6l05y")
+script = SubResource("GDScript_4qdpb")
+
 [node name="Money" type="Label" parent="."]
-offset_left = 912.0
-offset_top = 32.0
-offset_right = 1025.0
-offset_bottom = 84.0
+offset_left = 929.0
+offset_top = 585.0
+offset_right = 1042.0
+offset_bottom = 637.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("8_p7buf")
@@ -89,20 +119,14 @@ shape = SubResource("RectangleShape2D_dvbko")
 [node name="Delay" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 990.0
-offset_top = 447.0
-offset_right = 1126.0
-offset_bottom = 516.0
-grow_horizontal = 2
-grow_vertical = 2
-label_settings = SubResource("LabelSettings_6l05y")
-script = SubResource("GDScript_4qdpb")
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Canvas" parent="." instance=ExtResource("12_ta2wu")]
 
 [connection signal="pressed" from="Pile" to="." method="_on_pile_pressed"]
 [connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
 
 [editable path="Timer"]
+[editable path="Canvas"]

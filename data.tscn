@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://d16oretb0nrtd"]
+
+[ext_resource type="Shader" uid="uid://docb3xxup5uua" path="res://Scenes/Shaders_Transition.tres" id="1_h321k"]
+
+[sub_resource type="GDScript" id="GDScript_fi7a1"]
+script/source = "extends CanvasLayer
+
+func _ready() -> void:
+	$Color/Anim.play(\"In\")
+	$Timer.start()
+func _on_timer_timeout() -> void:
+	$Color/Anim.play(\"Out\")
+	$\".\".visible = false
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6in2n"]
+shader = ExtResource("1_h321k")
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1080.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.5, 0.5)
+shader_parameter/progress = 1.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 0
+
+[sub_resource type="Animation" id="Animation_ofa27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_s4ui1"]
+resource_name = "In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_alkwx"]
+resource_name = "Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmwxc"]
+_data = {
+"In": SubResource("Animation_s4ui1"),
+"Out": SubResource("Animation_alkwx"),
+"RESET": SubResource("Animation_ofa27")
+}
+
+[node name="Canvas" type="CanvasLayer"]
+script = SubResource("GDScript_fi7a1")
+
+[node name="Color" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6in2n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Anim" type="AnimationPlayer" parent="Color"]
+libraries = {
+"": SubResource("AnimationLibrary_kmwxc")
+}
+autoplay = "In"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

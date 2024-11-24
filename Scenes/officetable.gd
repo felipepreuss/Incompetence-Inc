@@ -8,12 +8,23 @@ var document= preload("res://Scenes/paper.tscn")
 @onready var texto = $Timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$Canvas.visible = false
 func _physics_process(delta: float) -> void:
+	print(Global.dia)
+	$Pile/DelayText.text = ""
 	$Money.text = str("$",Global.dinheiro,",00")
+	if Global.dinheiro >= Global.data_dinheiro[Global.dia - 1]:
+		$Canvas.visible = true
+		if $Canvas.visible:
+			$Canvas/Color/Anim.play("In")
+			$Canvas/Timer.start()
+			Global.dinheiro += Global.data_gasto[Global.dia - 1]
+			Global.dia += 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer_text()
+	if !pode_apertar:
+		$Pile/DelayText.text = str(int($Delay.time_left))
 
 
 #func _on_keyboard_pressed() -> void:
