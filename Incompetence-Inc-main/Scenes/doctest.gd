@@ -84,8 +84,7 @@ func generate_declaration():
 	Global.valor = declared_value
 # Helper function to pick a random element from a list
 func pick_random_from_list(list):
-	return list[randi_range(0, list.size() - 1)]
-
+	return list[randi_range(0,randi() % list.size())]
 
 func _on_modulated_timeout() -> void:
 	$Pisca.start()

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Incompetence-inc-main (2)"
+config/name="Incompetence-inc"
 run/main_scene="res://Scenes/menumain.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"

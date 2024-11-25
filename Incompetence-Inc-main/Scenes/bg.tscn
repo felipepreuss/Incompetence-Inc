@@ -8,6 +8,6 @@ metadata/_edit_group_ = true
 [node name="OfficeDesk" type="Sprite2D" parent="."]
 texture_filter = 3
 texture_repeat = 3
-position = Vector2(577.5, 327.5)
-scale = Vector2(2, 2)
+position = Vector2(576, 324)
+scale = Vector2(1.88235, 1.44)
 texture = ExtResource("1_s6nvv")
