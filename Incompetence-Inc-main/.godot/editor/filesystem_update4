@@ -7,5 +7,5 @@ res://Scenes/menumain.tscn
 res://Scenes/paper.tscn
 res://data.tscn
 res://Scenes/bg.tscn
-res://Scenes/doctest.gd
 res://day transition.tscn
+res://Scenes/doctest.gd

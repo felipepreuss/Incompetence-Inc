@@ -32,6 +32,7 @@ offset_bottom = 648.0
 color = Color(0.486174, 0.497254, 0.472934, 1)
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 449.0
 offset_top = 540.0
 offset_right = 655.0

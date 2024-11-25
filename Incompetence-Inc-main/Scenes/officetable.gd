@@ -49,7 +49,7 @@ func spawn_paper():
 	if paper_count <= paper_limit:
 		paper_count += 1
 		var obtain = document.instantiate()
-		obtain.global_position = Vector2(randf_range(50,1000),randf_range(200,450))
+		obtain.global_position = Vector2(randf_range(250,1000),randf_range(239,450))
 		add_child(obtain)
 		$Delay.start()
 
