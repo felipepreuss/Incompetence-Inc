@@ -8,12 +8,8 @@
 
 [sub_resource type="GDScript" id="GDScript_u4hfk"]
 script/source = "extends Control
-
-
 func _on_start_bttn_pressed() -> void:
 	get_tree().change_scene_to_file(\"res://Scenes/officetable.tscn\") # Replace with function body.
-	
-
 func _on_quit_bttn_pressed() -> void:
 	get_tree().quit() # Replace with function body.
 	

@@ -5,10 +5,12 @@ var pode_apertar = true
 var document= preload("res://Scenes/paper.tscn")
 @onready var time = $Timer/timeleft
 @onready var texto = $Timer
+@onready var transition_color = $Canvas/Color
+@onready var anim = $Canvas/Color/Anim
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Canvas.visible = false
+	anim.play("Out")
+# Called when the node enters the scene tree for the first time.
 func _physics_process(delta: float) -> void:
 	print(Global.dia)
 	objetivo()
@@ -20,6 +22,8 @@ func _process(delta: float) -> void:
 	timer_text()
 
 func objetivo():
+	if anim.current_animation == "In":
+		get_tree().change_scene_to_file("res://day transition.tscn")
 	$Canvas.visible = true
 	match Global.dia:
 		1:
@@ -49,7 +53,7 @@ func spawn_paper():
 	if paper_count <= paper_limit:
 		paper_count += 1
 		var obtain = document.instantiate()
-		obtain.global_position = Vector2(randf_range(250,1000),randf_range(239,450))
+		obtain.global_position = Vector2(randf_range(250,1000),randf_range(239,350))
 		add_child(obtain)
 		$Delay.start()
 

@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cks7wbm5glfjv"]
+[gd_scene load_steps=5 format=3 uid="uid://cks7wbm5glfjv"]
 
 [ext_resource type="FontFile" uid="uid://c6dv2q4s6gd5p" path="res://Sprites/Fpreuss.tres" id="1_dgcjt"]
-[ext_resource type="PackedScene" uid="uid://d16oretb0nrtd" path="res://data.tscn" id="2_6t4dx"]
 
-[sub_resource type="GDScript" id="GDScript_annom"]
+[sub_resource type="GDScript" id="GDScript_po2o6"]
 script/source = "extends Control
 
 
 func _on_button_pressed() -> void:
-	Global.dia += 1
-	$Canvas/Color/Anim.play(\"In\")
+	get_tree().change_scene_to_file(\"res://Scenes/officetable.tscn\")
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_qx0nt"]
@@ -23,24 +21,22 @@ font_size = 64
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = SubResource("GDScript_annom")
+script = SubResource("GDScript_po2o6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.486174, 0.497254, 0.472934, 1)
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 449.0
 offset_top = 540.0
 offset_right = 655.0
 offset_bottom = 582.0
+action_mode = 0
 text = "Next Day,"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 offset_left = 206.0
 offset_top = -8.0
 offset_right = 1358.0
@@ -57,7 +53,5 @@ layout_mode = 2
 text = "You made:
 -bills:"
 label_settings = SubResource("LabelSettings_p7vfh")
-
-[node name="Canvas" parent="." instance=ExtResource("2_6t4dx")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

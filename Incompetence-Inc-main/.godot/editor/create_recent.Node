@@ -1,6 +1,10 @@
+Control
+Node2D
+Marker2D
+CollisionShape2D
+Area2D
 VBoxContainer
 ColorRect
-Control
 Timer
 AnimationPlayer
 CanvasLayer

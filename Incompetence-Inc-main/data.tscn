@@ -1,22 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d16oretb0nrtd"]
+[gd_scene load_steps=6 format=3 uid="uid://d16oretb0nrtd"]
 
 [ext_resource type="Shader" uid="uid://docb3xxup5uua" path="res://Scenes/Shaders_Transition.tres" id="1_h321k"]
-
-[sub_resource type="GDScript" id="GDScript_fi7a1"]
-script/source = "extends CanvasLayer
-@export var cena_atual:String
-@export var cena_pos:String
-
-func _physics_process(_delta: float) -> void:
-	if $Color/Anim.current_animation == \"In\":
-		if cena_atual == \"res://day transition.tscn\":
-			cena_pos = \"res://Scenes/officetable.tscn\"
-			get_tree().change_scene_to_file(cena_pos)
-		elif cena_atual == \"res://Scenes/officetable.tscn\":
-			cena_pos = \"res://day transition.tscn\"
-			get_tree().change_scene_to_file(cena_pos)
-		$Color/Anim.play(\"Out\")
-"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6in2n"]
 shader = ExtResource("1_h321k")
@@ -67,7 +51,6 @@ _data = {
 }
 
 [node name="Canvas" type="CanvasLayer"]
-script = SubResource("GDScript_fi7a1")
 
 [node name="Color" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6in2n")
