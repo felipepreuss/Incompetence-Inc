@@ -1,4 +1,5 @@
-# The-Labor-Bluff
+Incompetence Incorporated.
+
 
 A game about work.
 
