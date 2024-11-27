@@ -1,4 +1,4 @@
-Incompetence Incorporated.
+# Incompetence Incorporated.
 
 
 A game about work.
