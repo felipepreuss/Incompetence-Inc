@@ -1,63 +1,43 @@
 extends Node2D
 var paper_limit = 5
 var paper_count = 0
-var pode_apertar = true
-var document= preload("res://Scenes/paper.tscn")
+var document = preload("res://Scenes/paper.tscn")
 @onready var time = $Timer/timeleft
 @onready var texto = $Timer
-@onready var transition_color = $Canvas/Color
-@onready var anim = $Canvas/Color/Anim
-
-func _ready() -> void:
-	anim.play("Out")
+@onready var data = Data.get_node("Color/Anim")
 # Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	data.play("Out")
+	$Delay.start()
 func _physics_process(delta: float) -> void:
 	print(Global.dia)
-	objetivo()
+	print(Global.dia_i)
 	$Money.text = str("$",Global.dinheiro,",00")
-	if Global.dinheiro >= Global.data_dinheiro[Global.dia - 1] and Global.dia <= 6:
-		Global.dinheiro += Global.data_gasto[Global.dia - 1]
+	if Global.dinheiro >= Global.data_dinheiro[Global.dia - 1]:
+		Global.dinheiro = Global.data_dinheiro[Global.dia - 1]
+		Global.dia += 1
+		Global.dia_i += 1
+		data.play("In")
+		await data.animation_finished
+		get_tree().change_scene_to_file("res://day transition.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer_text()
 
-func objetivo():
-	if anim.current_animation == "In":
-		get_tree().change_scene_to_file("res://day transition.tscn")
-	$Canvas.visible = true
-	match Global.dia:
-		1:
-			if Global.dinheiro >= Global.data_dinheiro[0]:
-				$Canvas/Color/Anim.play("In")
-		2:
-			if Global.dinheiro >= Global.data_dinheiro[1]:
-				$Canvas/Color/Anim.play("In")
-		3:
-			if Global.dinheiro >= Global.data_dinheiro[2]:
-				$Canvas/Color/Anim.play("In")
-		4:
-			if Global.dinheiro >= Global.data_dinheiro[3]:
-				$Canvas/Color/Anim.play("In")
-		5:
-			if Global.dinheiro >= Global.data_dinheiro[4]:
-				$Canvas/Color/Anim.play("In")
-		6:
-			if Global.dinheiro >= Global.data_dinheiro[5]:
-				$Canvas/Color/Anim.play("In")
+
 #func _on_keyboard_pressed() -> void:
 	#get_tree().change_scene_to_file("res://Scenes/Computer.tscn") # Replace with function body.
 
 func timer_text():
 	texto.text = str(floor(time.time_left))
-func spawn_paper():
-	if paper_count <= paper_limit:
-		paper_count += 1
-		var obtain = document.instantiate()
-		obtain.global_position = Vector2(randf_range(250,1000),randf_range(239,350))
-		add_child(obtain)
-		$Delay.start()
+func spawn() -> void:
+	paper_count += 1
+	var obtain = document.instantiate()
+	add_child(obtain)
+	obtain.position = Vector2(randf_range(250,1000),randf_range(239,390)) # Replace with function body.
+	$Delay.start()
 
 func _on_delay_timeout() -> void:
-	spawn_paper()
-	if paper_count == paper_limit:
+	spawn()
+	if paper_count >= paper_limit:
 		paper_count = 0

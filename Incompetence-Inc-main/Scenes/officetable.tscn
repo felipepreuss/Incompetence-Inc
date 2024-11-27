@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5i4pcsxamldg"]
+[gd_scene load_steps=14 format=3 uid="uid://c5i4pcsxamldg"]
 
 [ext_resource type="PackedScene" uid="uid://5wk16vaa67af" path="res://Scenes/bg.tscn" id="1_ciibd"]
 [ext_resource type="Script" path="res://Scenes/officetable.gd" id="1_sl71x"]
@@ -9,7 +9,6 @@
 [ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="8_sqhp1"]
 [ext_resource type="FontFile" uid="uid://c6dv2q4s6gd5p" path="res://Sprites/Fpreuss.tres" id="10_dqhun"]
 [ext_resource type="Texture2D" uid="uid://fgjdy2byroqi" path="res://Sprites/REJECTED-export-export.png" id="11_o1aol"]
-[ext_resource type="PackedScene" uid="uid://d16oretb0nrtd" path="res://data.tscn" id="12_ta2wu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi1oe"]
 size = Vector2(314.091, 193.372)
@@ -23,18 +22,12 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="GDScript" id="GDScript_4qdpb"]
 script/source = "extends Label
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	text = str(\"Day \",Global.dia)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvbko"]
 size = Vector2(312.511, 138.631)
-
-[sub_resource type="LabelSettings" id="LabelSettings_og1ti"]
-font = ExtResource("10_dqhun")
-font_size = 32
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sl71x")
@@ -101,22 +94,11 @@ shape = SubResource("RectangleShape2D_dvbko")
 
 [node name="Delay" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Canvas" parent="." instance=ExtResource("12_ta2wu")]
-
-[node name="DelayText" type="Label" parent="."]
-offset_left = 344.616
-offset_top = 331.485
-offset_right = 384.616
-offset_bottom = 362.485
-label_settings = SubResource("LabelSettings_og1ti")
-
 [connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
 
 [editable path="Timer"]
-[editable path="Canvas"]
