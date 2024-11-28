@@ -1,9 +1,9 @@
+VBoxContainer
+TextureRect
 Timer
 AnimationPlayer
 ColorRect
 CanvasLayer
 Button
-VBoxContainer
 Label
 Panel
-TextureRect

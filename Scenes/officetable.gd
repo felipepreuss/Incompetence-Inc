@@ -1,30 +1,28 @@
 extends Node2D
 var paper_limit = 5
 var paper_count = 0
-var pode_apertar = true
-var document= preload("res://Scenes/paper.tscn")
-@onready var stack = $Pile
+var document = preload("res://Scenes/paper.tscn")
 @onready var time = $Timer/timeleft
 @onready var texto = $Timer
+@onready var data = Data.get_node("Color/Anim")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Canvas.visible = false
+	data.play("Out")
+	$Delay.start()
 func _physics_process(delta: float) -> void:
 	print(Global.dia)
-	$Pile/DelayText.text = ""
+	print(Global.dia_i)
 	$Money.text = str("$",Global.dinheiro,",00")
 	if Global.dinheiro >= Global.data_dinheiro[Global.dia - 1]:
-		$Canvas.visible = true
-		if $Canvas.visible:
-			$Canvas/Color/Anim.play("In")
-			$Canvas/Timer.start()
-			Global.dinheiro += Global.data_gasto[Global.dia - 1]
-			Global.dia += 1
+		Global.dinheiro = Global.data_dinheiro[Global.dia - 1]
+		Global.dia += 1
+		Global.dia_i += 1
+		data.play("In")
+		await data.animation_finished
+		get_tree().change_scene_to_file("res://day transition.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer_text()
-	if !pode_apertar:
-		$Pile/DelayText.text = str(int($Delay.time_left))
 
 
 #func _on_keyboard_pressed() -> void:
@@ -32,17 +30,14 @@ func _process(delta: float) -> void:
 
 func timer_text():
 	texto.text = str(floor(time.time_left))
-func _on_pile_pressed() -> void:
-	if pode_apertar and paper_count <= paper_limit:
-		pode_apertar = false
-		paper_count += 1
-		var obtain = document.instantiate()
-		add_child(obtain)
-		obtain.position = stack.position # Replace with function body.
-		$Pile/AudioStreamPlayer2D.play()
-		$Delay.start()
+func spawn() -> void:
+	paper_count += 1
+	var obtain = document.instantiate()
+	add_child(obtain)
+	obtain.position = Vector2(randf_range(250,1000),randf_range(239,390)) # Replace with function body.
+	$Delay.start()
 
 func _on_delay_timeout() -> void:
-	pode_apertar = true
-	if paper_count == paper_limit:
+	spawn()
+	if paper_count >= paper_limit:
 		paper_count = 0

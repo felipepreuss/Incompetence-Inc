@@ -1,17 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d16oretb0nrtd"]
+[gd_scene load_steps=7 format=3 uid="uid://d16oretb0nrtd"]
 
 [ext_resource type="Shader" uid="uid://docb3xxup5uua" path="res://Scenes/Shaders_Transition.tres" id="1_h321k"]
-
-[sub_resource type="GDScript" id="GDScript_fi7a1"]
-script/source = "extends CanvasLayer
-
-func _ready() -> void:
-	$Color/Anim.play(\"In\")
-	$Timer.start()
-func _on_timer_timeout() -> void:
-	$Color/Anim.play(\"Out\")
-	$\".\".visible = false
-"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6in2n"]
 shader = ExtResource("1_h321k")
@@ -78,7 +67,7 @@ _data = {
 }
 
 [node name="Canvas" type="CanvasLayer"]
-script = SubResource("GDScript_fi7a1")
+layer = 0
 
 [node name="Color" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6in2n")
@@ -93,9 +82,3 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_kmwxc")
 }
-autoplay = "In"
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

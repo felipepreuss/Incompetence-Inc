@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://c5i4pcsxamldg"]
+
+[ext_resource type="PackedScene" uid="uid://5wk16vaa67af" path="res://Scenes/bg.tscn" id="1_ciibd"]
+[ext_resource type="Script" path="res://Scenes/officetable.gd" id="1_sl71x"]
+[ext_resource type="PackedScene" uid="uid://b4ph6bvp1jdas" path="res://timer.tscn" id="3_rjkoh"]
+[ext_resource type="Texture2D" uid="uid://cjf3lvuenognj" path="res://Sprites/manilafolder.png" id="6_cj10d"]
+[ext_resource type="AudioStream" uid="uid://ckd0ggngalcn2" path="res://Sound/323387-Manilla_folder_-pages_being_turned_1-.mp3" id="7_kavjq"]
+[ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="8_p7buf"]
+[ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="8_sqhp1"]
+[ext_resource type="FontFile" uid="uid://c6dv2q4s6gd5p" path="res://Sprites/Fpreuss.tres" id="10_dqhun"]
+[ext_resource type="Texture2D" uid="uid://fgjdy2byroqi" path="res://Sprites/REJECTED-export-export.png" id="11_o1aol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi1oe"]
+size = Vector2(314.091, 193.372)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6l05y"]
+font = ExtResource("10_dqhun")
+font_size = 72
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_4qdpb"]
+script/source = "extends Label
+
+func _physics_process(delta: float) -> void:
+	text = str(\"Day \",Global.dia)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvbko"]
+size = Vector2(312.511, 138.631)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_sl71x")
+
+[node name="bg" parent="." instance=ExtResource("1_ciibd")]
+
+[node name="Timer" parent="." instance=ExtResource("3_rjkoh")]
+
+[node name="Manilafolder" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(764, 593)
+rotation = -0.00849046
+scale = Vector2(0.545213, 0.622581)
+texture = ExtResource("6_cj10d")
+
+[node name="Area2D" type="Area2D" parent="Manilafolder" groups=["Folder"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manilafolder/Area2D"]
+position = Vector2(-0.0778046, 8.03082)
+rotation = -0.00102685
+shape = SubResource("RectangleShape2D_pi1oe")
+
+[node name="Inserted" type="AudioStreamPlayer2D" parent="Manilafolder"]
+stream = ExtResource("7_kavjq")
+
+[node name="Day" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 923.0
+offset_top = 503.0
+offset_right = 1143.0
+offset_bottom = 643.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("8_sqhp1")
+text = "
+"
+label_settings = SubResource("LabelSettings_6l05y")
+script = SubResource("GDScript_4qdpb")
+
+[node name="Money" type="Label" parent="."]
+offset_left = 929.0
+offset_top = 585.0
+offset_right = 1042.0
+offset_bottom = 637.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("8_p7buf")
+theme_override_font_sizes/font_size = 50
+text = "$0,00"
+
+[node name="Shredder" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(382, 572)
+scale = Vector2(0.5, 0.544)
+texture = ExtResource("11_o1aol")
+
+[node name="Area2D" type="Area2D" parent="Shredder" groups=["Lixo"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shredder/Area2D"]
+position = Vector2(7.74438, -87.6975)
+shape = SubResource("RectangleShape2D_dvbko")
+
+[node name="Delay" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
+
+[editable path="Timer"]

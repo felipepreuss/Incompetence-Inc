@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://u4eqsr7q5ni3"]
 
-[ext_resource type="PackedScene" uid="uid://cdorjhfxmwu1q" path="res://menubg.tscn" id="1_itqmx"]
+[ext_resource type="Texture2D" uid="uid://dymft2tvaw3py" path="res://Sprites/city1_preview.png" id="1_4bdv5"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_nxvfb"]
 [ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="3_evpcx"]
 [ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="3_g8gu3"]
@@ -8,11 +8,17 @@
 
 [sub_resource type="GDScript" id="GDScript_u4hfk"]
 script/source = "extends Control
+@onready var data = Data.get_node(\"Color/Anim\")
 
-
+func _ready() -> void:
+	if not data.is_playing():
+		data.play(\"Out\")
+		await data.animation_finished
 func _on_start_bttn_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://Scenes/officetable.tscn\") # Replace with function body.
-	
+	if not data.is_playing():
+		data.play(\"In\")
+		await data.animation_finished
+		get_tree().change_scene_to_file(\"res://Scenes/officetable.tscn\") # Replace with function body.
 
 func _on_quit_bttn_pressed() -> void:
 	get_tree().quit() # Replace with function body.
@@ -138,8 +144,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_u4hfk")
 
-[node name="Node2D" parent="." instance=ExtResource("1_itqmx")]
-position = Vector2(0, -1)
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4bdv5")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
