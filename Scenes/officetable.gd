@@ -5,11 +5,30 @@ var document = preload("res://Scenes/paper.tscn")
 @onready var time = $Timer/timeleft
 @onready var texto = $Timer
 @onready var data = Data.get_node("Color/Anim")
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	data.play("Out")
 	$Delay.start()
+	match Global.dia:
+		2:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			add_child(paperinfo)
+		4:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/companynotice3.png")
+			add_child(paperinfo)
+		5:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/coworkernote.png")
+			add_child(paperinfo)
+		6:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/notefromadmin.png")
+			add_child(paperinfo)
 func _physics_process(delta: float) -> void:
 	print(Global.dia)
 	print(Global.dia_i)
@@ -36,7 +55,7 @@ func spawn() -> void:
 	paper_count += 1
 	var obtain = document.instantiate()
 	add_child(obtain)
-	obtain.position = Vector2(randf_range(250,1000),randf_range(239,390)) # Replace with function body.
+	obtain.position = Vector2(randf_range(250,900),randf_range(239,340)) # Replace with function body.
 	$Delay.start()
 
 func _on_delay_timeout() -> void:

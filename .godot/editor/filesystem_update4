@@ -1,12 +1,12 @@
-res://Scenes/menumain.tscn
+res://Scenes/officetable.tscn
 res://Scenes/Shaders_Transition.tres
 res://Sprites/Fpreuss.tres
 res://data.gdshader
 res://Scenes/officetable.gd
-res://Scenes/officetable.tscn
+res://Scenes/menumain.tscn
 res://Scenes/paper.tscn
 res://data.tscn
 res://menubg.tscn
-res://day transition.tscn
-res://Scenes/Global.gd
 res://day_transition.tscn
+res://PaperInfo.tscn
+res://cluelessnote.tscn

@@ -1,3 +1,6 @@
+Sprite2D
+CollisionPolygon2D
+Papel
 VBoxContainer
 TextureRect
 Timer
