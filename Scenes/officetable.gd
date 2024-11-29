@@ -14,6 +14,13 @@ func _ready() -> void:
 			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
 			paperinfo.global_position = Vector2(800,300)
 			add_child(paperinfo)
+			
+		3:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/companynotice2.png")
+			add_child(paperinfo)
+		
 		4:
 			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
 			paperinfo.global_position = Vector2(800,300)
