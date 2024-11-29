@@ -9,10 +9,44 @@ var document = preload("res://Scenes/paper.tscn")
 func _ready() -> void:
 	data.play("Out")
 	$Delay.start()
+<<<<<<< Updated upstream:Incompetence-Inc-main/Scenes/officetable.gd
+=======
+	match Global.dia:
+		2:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			add_child(paperinfo)
+			
+		3:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/companynotice2.png")
+			add_child(paperinfo)
+		
+		4:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/companynotice3.png")
+			add_child(paperinfo)
+		5:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/coworkernote.png")
+			add_child(paperinfo)
+		6:
+			var paperinfo = preload("res://PaperInfo.tscn").instantiate()
+			paperinfo.global_position = Vector2(800,300)
+			paperinfo.get_node(".").texture = preload("res://Sprites/notefromadmin.png")
+			add_child(paperinfo)
+>>>>>>> Stashed changes:Scenes/officetable.gd
 func _physics_process(delta: float) -> void:
-	print(Global.dia)
-	print(Global.dia_i)
 	$Money.text = str("$",Global.dinheiro,",00")
+	if Global.dia > 6:
+		data.play("In")
+		if get_tree():
+			get_tree().change_scene_to_file("res://Good_Ending.tscn")
+		else:
+			print("Erro: árvore de cena não disponível.")
 	if Global.dinheiro >= Global.data_dinheiro[Global.dia - 1]:
 		Global.dinheiro = Global.data_dinheiro[Global.dia - 1]
 		Global.dia += 1

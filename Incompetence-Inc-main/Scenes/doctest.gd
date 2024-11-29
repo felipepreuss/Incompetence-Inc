@@ -18,8 +18,6 @@ var nationalities = ["American", "British", "German", "French", "Chinese", "Indi
 
 var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational", "Carioca", "Corinthians", "Indn"]
 
-
-
 var invalid_declared_values = [-50, 0]
 
 var difficulty = 0
@@ -41,7 +39,6 @@ func filter_function():
 # Function to set the difficulty level
 func set_difficulty(new_difficulty):
 	difficulty = new_difficulty
-
 # Function to generate a customs declaration
 func generate_declaration():
 	var first_name = pick_random_from_list(first_names) + " "
@@ -49,13 +46,10 @@ func generate_declaration():
 	var item = pick_random_from_list(items)
 	var declared_value = pick_random_from_list(Global.declared_values)
 	var nationality = pick_random_from_list(nationalities)
-	
-	
 	var value = randi_range(1, BASE_FAKE_VALUE + 1 + difficulty)
 	# Randomly decide if the declaration will be incorrect
 	#if value >= BASE_FAKE_VALUE:
 		#is_declaration_valid = false
-
 	match value:
 		BASE_FAKE_VALUE:
 			# Incorrect item
@@ -75,7 +69,6 @@ func generate_declaration():
 	
 	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(declared_value):
 		is_declaration_valid = false
-
 	# Update text fields with generated data
 	name_label.text = declaration_text
 	item_label.text = item_text

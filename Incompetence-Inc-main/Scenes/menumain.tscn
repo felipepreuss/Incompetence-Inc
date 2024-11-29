@@ -11,6 +11,7 @@ script/source = "extends Control
 @onready var data = Data.get_node(\"Color/Anim\")
 
 func _ready() -> void:
+	Global.dia = 1
 	if not data.is_playing():
 		data.play(\"Out\")
 		await data.animation_finished

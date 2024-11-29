@@ -1,11 +1,30 @@
+<<<<<<< Updated upstream:Incompetence-Inc-main/.godot/editor/filesystem_update4
 res://Scenes/menumain.tscn
 res://Sprites/Fpreuss.tres
 res://Scenes/Shaders_Transition.tres
 res://data.gdshader
 res://Scenes/officetable.tscn
+=======
+res://Good_Ending.tscn
+res://Scenes/Shaders_Transition.tres
+res://Sprites/Fpreuss.tres
+res://data.gdshader
+>>>>>>> Stashed changes:.godot/editor/filesystem_update4
 res://Scenes/paper.tscn
+res://Scenes/doctest.gd
+res://Scenes/menumain.tscn
+res://Scenes/officetable.tscn
 res://data.tscn
 res://Scenes/officetable.gd
 res://Scenes/Global.gd
 res://menubg.tscn
+<<<<<<< Updated upstream:Incompetence-Inc-main/.godot/editor/filesystem_update4
 res://day transition.tscn
+=======
+res://day_transition.tscn
+res://PaperInfo.tscn
+res://cluelessnote.tscn
+res://Scenes/bg.tscn
+res://Scenes/cluelessnote.gd
+res://Scenes/officetable.gd
+>>>>>>> Stashed changes:.godot/editor/filesystem_update4
