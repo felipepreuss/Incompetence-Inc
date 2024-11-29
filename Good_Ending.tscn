@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://btcsf6h4uq1qg"]
+
+[ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_fcavk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 80.0
+offset_right = 804.0
+offset_bottom = 178.0
+text = "The End.
+This week really felt like forever. Like all the others I've been working for this stupid company.
+"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 233.0
+offset_right = 530.0
+offset_bottom = 308.0
+text = "COMPANY NOTICE:
+YOU HAVE BEEN PROMOTED TO  ->
+\"SUPERVISING AGENT\""
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 491.0
+offset_right = 652.0
+offset_bottom = 536.0
+theme_override_fonts/font = ExtResource("1_fcavk")
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 515.0
+offset_top = 561.0
+offset_right = 652.0
+offset_bottom = 606.0
+theme_override_fonts/font = ExtResource("1_fcavk")
+theme_override_font_sizes/font_size = 25
+text = "Leave Game"
