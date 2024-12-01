@@ -40,7 +40,12 @@ func _process(delta: float) -> void:
 	if !pressionado:
 		if no_corpo:
 			queue_free()
-			if !is_declaration_valid:
+			if Global.dia == 5:
+				if !is_declaration_valid:
+					Global.verify_final = true
+					Global.dinheiro += Global.valor
+					tempo.start(tempo.time_left + randi_range(1,6))
+			if Global.dia != 5 and !is_declaration_valid:
 				get_tree().change_scene_to_file("res://Scenes/gameover.tscn")
 			elif is_declaration_valid:
 				Global.dinheiro += Global.valor

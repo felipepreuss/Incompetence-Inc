@@ -12,3 +12,5 @@ var dia:int = 1
 var dia_i:int = 0
 #Animação de Transição em Shaders
 var playing = false
+#Final bom ou ruim?
+var verify_final = false

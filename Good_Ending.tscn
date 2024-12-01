@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://btcsf6h4uq1qg"]
+[gd_scene load_steps=3 format=3 uid="uid://btcsf6h4uq1qg"]
 
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_fcavk"]
+[ext_resource type="Script" path="res://finals.gd" id="1_mur14"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mur14")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -41,6 +43,7 @@ theme_override_font_sizes/font_size = 25
 text = "Main Menu"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 515.0
 offset_top = 561.0
 offset_right = 652.0
@@ -48,3 +51,6 @@ offset_bottom = 606.0
 theme_override_fonts/font = ExtResource("1_fcavk")
 theme_override_font_sizes/font_size = 25
 text = "Leave Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

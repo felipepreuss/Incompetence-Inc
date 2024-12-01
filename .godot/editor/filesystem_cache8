@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1732913436
+::res://::1732970199
 Bad_Ending.tscn::PackedScene::7692042943708512142::1732913392::0::1::::<><>::
 cluelessnote.tscn::PackedScene::5599925875813637052::1732913398::0::1::::<><>::uid://ksivh2t4gqjo::::res://Sprites/cluelessnote.svg<>res://Scenes/cluelessnote.gd
 credback.tscn::PackedScene::2199960804605413873::1732913398::0::1::::<><>::uid://dh0teqh5h8j7x::::res://Sprites/creditbackground.png
 credits.gd::GDScript::-1::1732913398::0::1::::<>Control<>::
 credits.tscn::PackedScene::8850985581149902493::1732913398::0::1::::<><>::res://credits.gd<>uid://c8dolumhrfhc2::::res://Sprites/W95FA.ttf<>uid://6lxbegl6t0bd::::res://credback.tscn<>uid://cqcqgtglwd08l::::res://Scenes/bttnback.tres<>uid://dr0kn6hhbrn3v::::res://Sound/musicacredito.mp3<>uid://ddqyyhj4r2bsg::::res://Sound/menu-buttom-3-bibs-190018.mp3<>uid://cgdrcaqr4ulnf::::res://Sound/button-202966.mp3
-data.gdshader::Shader::-1::1732913398::0::1::::<><>::
+data.gdshader::Shader::-1::1732927923::0::1::::<><>::
 data.tscn::PackedScene::9049048331963171493::1732913398::0::1::::<><>::uid://docb3xxup5uua::::res://Scenes/Shaders_Transition.tres
 day transition.tscn::PackedScene::5513870907006558803::1732913394::0::1::::<><>::
 day_transition.tscn::PackedScene::5513870907006558803::1732913398::0::1::::<><>::uid://sm5tfosxi620::::res://Sprites/Moedario.tres
@@ -17,11 +17,11 @@ timeleft.gd::GDScript::-1::1732913398::0::1::::<>Timer<>::
 timer.tscn::PackedScene::4453343279748230054::1732913398::0::1::::<><>::uid://c8dolumhrfhc2::::res://Sprites/W95FA.ttf<>res://timeleft.gd<>uid://bltvjnve4dnf8::::res://Sound/ticking-clock-182894.mp3
 ::res://Incompetence-Inc-main/::1732913397
 README.md::TextFile::-1::1732913397::0::1::::<><>::
-::res://Scenes/::1732913398
+::res://Scenes/::1732927923
 bg.tscn::PackedScene::2151736880965481149::1732913397::0::1::::<><>::uid://cc13niupp88y1::::res://Sprites/NEWBG.png
 bttnback.tres::StyleBoxFlat::5900974815492348841::1732913397::0::1::::<><>::
 cluelessnote.gd::GDScript::-1::1732913397::0::1::::Papel<>Sprite2D<>::
-doctest.gd::GDScript::-1::1732913397::0::1::::<>Papel<>::
+doctest.gd::GDScript::-1::1732927903::0::1::::<>Papel<>::
 gameover.gd::GDScript::-1::1732913397::0::1::::<>Control<>::
 gameover.tscn::PackedScene::1318121391931910618::1732913397::0::1::::<><>::res://Scenes/gameover.gd<>uid://dg31fk3md4tee::::res://Scenes/gameoverbgimg.tscn<>uid://c8dolumhrfhc2::::res://Sprites/W95FA.ttf<>uid://cgdrcaqr4ulnf::::res://Sound/button-202966.mp3<>uid://cqcqgtglwd08l::::res://Scenes/bttnback.tres<>uid://ddqyyhj4r2bsg::::res://Sound/menu-buttom-3-bibs-190018.mp3<>uid://bn1pfooptr5t4::::res://Sound/realm-of-the-mad-god-death-sound.mp3
 gameoverbgimg.tscn::PackedScene::7639785829841044848::1732913397::0::1::::<><>::uid://bjhyofk1vl3la::::res://Sprites/gameover_bg.png
@@ -32,8 +32,8 @@ officetable.gd::GDScript::-1::1732913398::0::1::::<>Node2D<>::
 officetable.tscn::PackedScene::6896809412157131736::1732913398::0::1::::<><>::uid://5wk16vaa67af::::res://Scenes/bg.tscn<>res://Scenes/officetable.gd<>uid://b4ph6bvp1jdas::::res://timer.tscn<>uid://cjf3lvuenognj::::res://Sprites/manilafolder.png<>uid://ckd0ggngalcn2::::res://Sound/323387-Manilla_folder_-pages_being_turned_1-.mp3<>uid://c8dolumhrfhc2::::res://Sprites/W95FA.ttf<>uid://cqcqgtglwd08l::::res://Scenes/bttnback.tres<>uid://c6dv2q4s6gd5p::::res://Sprites/Fpreuss.tres<>uid://fgjdy2byroqi::::res://Sprites/REJECTED-export-export.png
 paper.tscn::PackedScene::7335210737006662955::1732913398::0::1::::<><>::uid://kqot45ynaw75::::res://Sprites/customsdec2.png<>res://Scenes/doctest.gd<>uid://c8dolumhrfhc2::::res://Sprites/W95FA.ttf<>uid://c6dv2q4s6gd5p::::res://Sprites/Fpreuss.tres<>uid://csra5s7s851xx::::res://Sprites/label.tres
 png-transparent-rubbish-bins-waste-paper-baskets-plastic-recycling-others-angle-recycling-waste-thumbnail.png::CompressedTexture2D::9174813063463181408::1732913398::1732913447::1::::<><>::
-Shaders_Transition.tres::Shader::8146146581239490968::1732913397::0::1::::<><>::
-::res://Sound/::1732913398
+Shaders_Transition.tres::Shader::8146146581239490968::1732927923::0::1::::<><>::
+::res://Sound/::1732913439
 323387-Manilla_folder_-pages_being_turned_1-.mp3::AudioStreamMP3::5482451912106902197::1732913398::1732913438::1::::<><>::
 button-202966.mp3::AudioStreamMP3::5201203348470241275::1732913398::1732913438::1::::<><>::
 menu-buttom-3-bibs-190018.mp3::AudioStreamMP3::7404359075846568118::1732913398::1732913438::1::::<><>::
@@ -42,7 +42,7 @@ paper-flutter-5933.mp3::AudioStreamMP3::5672861818030289486::1732913398::1732913
 paper-shredder-42411.mp3::AudioStreamMP3::8988911696774960584::1732913398::1732913439::1::::<><>::
 realm-of-the-mad-god-death-sound.mp3::AudioStreamMP3::3353469914115886771::1732913398::1732913439::1::::<><>::
 ticking-clock-182894.mp3::AudioStreamMP3::3199012985496906023::1732913398::1732913439::1::::<><>::
-::res://Sprites/::1732913398
+::res://Sprites/::1732913447
 city1_preview.png::CompressedTexture2D::8868905794925602326::1732913398::1732913447::1::::<><>::
 cluelessnote.svg::CompressedTexture2D::739570883842986016::1732913398::1732913447::1::::<><>::
 companynotice1.png::CompressedTexture2D::1922782087240532632::1732913398::1732913447::1::::<><>::

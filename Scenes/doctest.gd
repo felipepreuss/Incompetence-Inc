@@ -19,7 +19,6 @@ var nationalities = ["American", "British", "German", "French", "Chinese", "Indi
 var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational", "Carioca", "Corinthians", "Indn"]
 
 
-
 var invalid_declared_values = [-50, 0]
 
 var difficulty = 0
@@ -66,6 +65,9 @@ func generate_declaration():
 		BASE_FAKE_VALUE + 2:
 			# Incorrect nationality
 			nationality = pick_random_from_list(invalid_nationalities)
+		BASE_FAKE_VALUE + 3:
+			#Incorrect Name
+			pass
 	
 	var full_name = first_name + surname
 	var declaration_text = full_name
@@ -73,7 +75,7 @@ func generate_declaration():
 	var value_text = "$" + str(declared_value)
 	var nationality_text =  nationality
 	
-	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(declared_value):
+	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(declared_value) :
 		is_declaration_valid = false
 
 	# Update text fields with generated data
