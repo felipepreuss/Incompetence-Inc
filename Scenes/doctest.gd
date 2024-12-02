@@ -32,9 +32,6 @@ var piscou = 0
 @onready var value_label = $ValueLabel
 @onready var nationality_label = $NationalityLabel
 func _draw() -> void:
-	filter_function()
-
-func filter_function():
 	generate_declaration()
 	set_difficulty(1)
 # Function to set the difficulty level
@@ -49,12 +46,10 @@ func generate_declaration():
 	var declared_value = pick_random_from_list(Global.declared_values)
 	var nationality = pick_random_from_list(nationalities)
 	
-	
 	var value = randi_range(1, BASE_FAKE_VALUE + 1 + difficulty)
 	# Randomly decide if the declaration will be incorrect
 	#if value >= BASE_FAKE_VALUE:
 		#is_declaration_valid = false
-
 	match value:
 		BASE_FAKE_VALUE:
 			# Incorrect item
@@ -75,7 +70,7 @@ func generate_declaration():
 	var value_text = "$" + str(declared_value)
 	var nationality_text =  nationality
 	
-	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(declared_value) :
+	if invalid_items.has(item) or invalid_nationalities.has(nationality) or invalid_declared_values.has(declared_value):
 		is_declaration_valid = false
 
 	# Update text fields with generated data

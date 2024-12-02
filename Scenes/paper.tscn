@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcrh34va1t76v"]
 
-[ext_resource type="Texture2D" uid="uid://kqot45ynaw75" path="res://Sprites/customsdec2.png" id="1_ulydh"]
+[ext_resource type="Texture2D" uid="uid://cvde8ww2sj5co" path="res://Sprites/customsdec-Sheet.png" id="1_33ewx"]
 [ext_resource type="Script" path="res://Scenes/doctest.gd" id="2_js6cy"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="3_x324e"]
 [ext_resource type="FontFile" uid="uid://c6dv2q4s6gd5p" path="res://Sprites/Fpreuss.tres" id="4_g86e6"]
@@ -11,8 +11,10 @@ size = Vector2(291, 268)
 
 [node name="Doctest" type="Sprite2D"]
 texture_filter = 3
-position = Vector2(18, -1)
-texture = ExtResource("1_ulydh")
+position = Vector2(1.90735e-06, -5.96046e-08)
+texture = ExtResource("1_33ewx")
+hframes = 3
+region_rect = Rect2(10, 10, 291, 268)
 script = ExtResource("2_js6cy")
 
 [node name="NameLabel" type="Label" parent="."]
@@ -90,7 +92,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_gofhi")
 
 [node name="Modulated" type="Timer" parent="."]

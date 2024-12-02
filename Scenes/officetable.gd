@@ -37,8 +37,6 @@ func _ready() -> void:
 			paperinfo.get_node(".").texture = preload("res://Sprites/notefromadmin.png")
 			add_child(paperinfo)
 func _physics_process(delta: float) -> void:
-	print(Global.dia)
-	print(Global.dia_i)
 	$Money.text = str("$",Global.dinheiro,",00")
 	if Global.dinheiro >= Global.data_dinheiro[Global.dia - 1]:
 		Global.dinheiro = Global.data_dinheiro[Global.dia - 1]

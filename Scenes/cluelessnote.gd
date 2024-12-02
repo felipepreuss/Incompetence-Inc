@@ -13,6 +13,12 @@ var is_declaration_valid = true
 @onready var trash_pos = $"../Shredder".global_position
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	frame = randi_range(0,2)
+	match frame:
+		0,2:
+			is_declaration_valid = false
+		1:
+			is_declaration_valid = true
 	tamanho = Vector2(texture.get_width() * scale.x, texture.get_height() * scale.y)
 	center_offset = Vector2(tamanho.x/2,tamanho.y/2)
  # Replace with function body.
