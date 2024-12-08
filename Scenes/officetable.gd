@@ -43,11 +43,13 @@ func _physics_process(delta: float) -> void:
 		data.play("In")
 		Global.dia += 1
 		Global.dia_i += 1
-		if Global.dia > 6 and !Global.verify_final:
+		if !Global.suborno and Global.dia > 6:
+			data.play("In")
 			get_tree().change_scene_to_file("res://Good_Ending.tscn")
-		if Global.dia > 6 and Global.verify_final:
+		elif Global.suborno and Global.dia > 6:
+			data.play("In")
 			get_tree().change_scene_to_file("res://Bad_Ending.tscn")
-		if get_tree():
+		if get_tree() and Global.dia <= 6:
 			get_tree().change_scene_to_file("res://day_transition.tscn")
 		else:
 			print("Erro: árvore de cena não disponível.")

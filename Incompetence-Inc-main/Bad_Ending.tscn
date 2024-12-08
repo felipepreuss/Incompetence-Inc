@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dhuc286lbfgp7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 89.0
+offset_right = 666.0
+offset_bottom = 138.0
+text = "		The End
+You incompetent piece of shit."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 514.0
+offset_right = 590.0
+offset_bottom = 545.0
+text = "Main Menu"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 562.0
+offset_right = 590.0
+offset_bottom = 597.0
+text = "Leave Game"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 246.0
+offset_right = 917.0
+offset_bottom = 373.0
+text = "########  Employment terminated.
+
+Cops are on the way to your residence."

@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Incompetence-inc-v Tzin"
+config/name="Incompetence-inc-main"
 run/main_scene="res://Scenes/menumain.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Sprites/icon.svg"
+boot_splash/bg_color=Color(0.883378, 0.883378, 0.883378, 1)
+boot_splash/image="res://incompicon.png"
+boot_splash/fullsize=false
+config/icon="res://incompicon.png"
+config/windows_native_icon="res://incompicon.ico"
+boot_splash/minimum_display_time=5000
 
 [autoload]
 
@@ -22,6 +27,7 @@ Data="*res://data.tscn"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [input]
