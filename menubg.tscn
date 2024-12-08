@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://8afhjmqqvras"]
+[gd_scene load_steps=2 format=3 uid="uid://cdorjhfxmwu1q"]
 
-[ext_resource type="Texture2D" uid="uid://dymft2tvaw3py" path="res://Sprites/city1_preview.png" id="1_w0tkl"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7osde"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,4 +8,4 @@
 texture_filter = 3
 position = Vector2(576.5, 323)
 scale = Vector2(3.83667, 3.22)
-texture = ExtResource("1_w0tkl")
+texture = SubResource("CompressedTexture2D_7osde")

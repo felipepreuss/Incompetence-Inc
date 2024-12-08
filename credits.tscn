@@ -1,12 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv8ccplh1eq6p"]
+[gd_scene load_steps=18 format=3 uid="uid://dydqo66ipj7iv"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_gph15"]
+[ext_resource type="Texture2D" uid="uid://uhm38k0mayyi" path="res://Sprites/newcredbg.png" id="2_jqeny"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="2_o1wv4"]
-[ext_resource type="PackedScene" path="res://credback.tscn" id="2_w632n"]
-[ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="4_1bd3w"]
 [ext_resource type="AudioStream" uid="uid://dr0kn6hhbrn3v" path="res://Sound/musicacredito.mp3" id="4_hsl5t"]
 [ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="5_hnc47"]
 [ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="6_kbdpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eyg5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dcopq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ll3lh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8hso"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmth4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7hqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb5vi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if2n5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehne"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnrt1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3csh8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,24 +38,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gph15")
 
-[node name="credBG" parent="." instance=ExtResource("2_w632n")]
-position = Vector2(0, 9)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_jqeny")
 
 [node name="Creators" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.069
 anchor_bottom = 0.018
-offset_left = 267.0
-offset_top = 92.0
-offset_right = 831.512
-offset_bottom = 119.336
+offset_left = 299.0
+offset_top = 84.0
+offset_right = 863.512
+offset_bottom = 138.336
 pivot_offset = Vector2(383, 252)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 11
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_o1wv4")
-theme_override_font_sizes/font_size = 30
-text = "Vicktor Ramos e Felipe Preuss, da turma 2003 de 2024"
+theme_override_font_sizes/font_size = 70
+text = "A Collective effort by:"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -48,20 +73,21 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 0.733333)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.886275)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 0.745098)
-theme_override_constants/outline_size = 7
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_o1wv4")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = ExtResource("4_1bd3w")
-theme_override_styles/disabled_mirrored = ExtResource("4_1bd3w")
-theme_override_styles/disabled = ExtResource("4_1bd3w")
-theme_override_styles/hover_pressed_mirrored = ExtResource("4_1bd3w")
-theme_override_styles/hover_pressed = ExtResource("4_1bd3w")
-theme_override_styles/hover_mirrored = ExtResource("4_1bd3w")
-theme_override_styles/hover = ExtResource("4_1bd3w")
-theme_override_styles/pressed_mirrored = ExtResource("4_1bd3w")
-theme_override_styles/pressed = ExtResource("4_1bd3w")
-theme_override_styles/normal_mirrored = ExtResource("4_1bd3w")
-theme_override_styles/normal = ExtResource("4_1bd3w")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eyg5b")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_dcopq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ll3lh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_v8hso")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wmth4")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_q7hqq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pb5vi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_if2n5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ehne")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lnrt1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3csh8")
 text = "Back"
 
 [node name="PressedC" type="AudioStreamPlayer2D" parent="VBoxContainer/Return_menu"]
@@ -74,22 +100,17 @@ stream = ExtResource("6_kbdpv")
 [node name="AssetCred" type="Label" parent="."]
 texture_filter = 3
 layout_mode = 0
-offset_left = 403.0
-offset_top = 156.0
-offset_right = 810.0
-offset_bottom = 321.0
+offset_left = 227.0
+offset_top = 275.0
+offset_right = 1061.0
+offset_bottom = 440.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_o1wv4")
-theme_override_font_sizes/font_size = 25
-text = "Assets são cortesia de:
-Shuttleshock
-Archive.org
-Gettyimages
-pngwing
-e todos os outros que não pude listar aqui
-
-Manipulação dos assets por Felipe Preuss"
+theme_override_font_sizes/font_size = 50
+text = "Preuss (Concept, game design and assets)
+VT (Programming)
+Kiiso (Background art and game icon)"
 
 [node name="credcredre" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hsl5t")
