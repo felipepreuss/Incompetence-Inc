@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://6lxbegl6t0bd"]
+[gd_scene load_steps=2 format=3 uid="uid://bfjp1vwdf2xa2"]
 
-[ext_resource type="Texture2D" uid="uid://dh0teqh5h8j7x" path="res://Sprites/creditbackground.png" id="1_55l3a"]
+[ext_resource type="Texture2D" uid="uid://1p8dpdhrtfwa" path="res://Sprites/newcredbg.png" id="1_478j4"]
 
 [node name="credBG" type="Node2D"]
+position = Vector2(18, 18)
 metadata/_edit_group_ = true
 
 [node name="Creditbackground" type="Sprite2D" parent="."]
 texture_filter = 3
 position = Vector2(574, 326)
-scale = Vector2(4.16727, 3.49727)
-texture = ExtResource("1_55l3a")
+scale = Vector2(1.19, 1)
+texture = ExtResource("1_478j4")

@@ -1,12 +1,76 @@
-[gd_scene load_steps=8 format=3 uid="uid://s1rjcmfgbki1"]
+[gd_scene load_steps=40 format=3 uid="uid://r1regn2uugi1"]
 
 [ext_resource type="Script" path="res://Scenes/gameover.gd" id="1_n4bfe"]
-[ext_resource type="PackedScene" uid="uid://dg31fk3md4tee" path="res://Scenes/gameoverbgimg.tscn" id="2_qisb1"]
+[ext_resource type="Texture2D" uid="uid://wgs0o0b7dus0" path="res://Sprites/gameoverbgimg.png" id="2_rly4g"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="2_y52mc"]
 [ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="3_idgfh"]
 [ext_resource type="StyleBox" uid="uid://cqcqgtglwd08l" path="res://Scenes/bttnback.tres" id="4_03a41"]
 [ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="4_08xlg"]
 [ext_resource type="AudioStream" uid="uid://bn1pfooptr5t4" path="res://Sound/realm-of-the-mad-god-death-sound.mp3" id="7_y0wdt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4orq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_44oos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gsfy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3iwnl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nanp4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4skgi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v521k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwokf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpv3i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npppg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jeyci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l5ev"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfhwi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pstyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eh7pk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbg5l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2jhk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yihgt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lavll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw2hf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f502v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqkcl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03pu5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3ljm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_up4u8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lums7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jtgn8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_teg6y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rr2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsfl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0dsf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xr42"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -17,72 +81,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n4bfe")
 
-[node name="GameOverbg" parent="." instance=ExtResource("2_qisb1")]
-position = Vector2(-7, 3)
-
-[node name="Fired" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 3
 layout_mode = 0
-offset_left = 251.0
-offset_top = 152.0
-offset_right = 914.0
-offset_bottom = 286.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 7
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("2_y52mc")
-theme_override_font_sizes/font_size = 141
-text = "You're fired."
-
-[node name="Retry" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 528.0
-offset_top = 479.0
-offset_right = 609.0
-offset_bottom = 521.0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0.709804)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 0.47451)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.647059)
-theme_override_colors/font_focus_color = Color(0.839216, 0.839216, 0.839216, 0.545098)
-theme_override_fonts/font = ExtResource("2_y52mc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = ExtResource("4_03a41")
-theme_override_styles/disabled_mirrored = ExtResource("4_03a41")
-theme_override_styles/disabled = ExtResource("4_03a41")
-theme_override_styles/hover_pressed_mirrored = ExtResource("4_03a41")
-theme_override_styles/hover_pressed = ExtResource("4_03a41")
-theme_override_styles/hover_mirrored = ExtResource("4_03a41")
-theme_override_styles/hover = ExtResource("4_03a41")
-theme_override_styles/pressed_mirrored = ExtResource("4_03a41")
-theme_override_styles/pressed = ExtResource("4_03a41")
-theme_override_styles/normal_mirrored = ExtResource("4_03a41")
-theme_override_styles/normal = ExtResource("4_03a41")
-text = "Again"
-
-[node name="GiveUp" type="Button" parent="."]
-layout_mode = 0
-offset_left = 530.0
-offset_top = 569.0
-offset_right = 611.0
-offset_bottom = 606.0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0.709804)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 0.521569)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.647059)
-theme_override_colors/font_focus_color = Color(0.839216, 0.839216, 0.839216, 0.545098)
-theme_override_fonts/font = ExtResource("2_y52mc")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/focus = ExtResource("4_03a41")
-theme_override_styles/disabled_mirrored = ExtResource("4_03a41")
-theme_override_styles/disabled = ExtResource("4_03a41")
-theme_override_styles/hover_pressed_mirrored = ExtResource("4_03a41")
-theme_override_styles/hover_pressed = ExtResource("4_03a41")
-theme_override_styles/hover_mirrored = ExtResource("4_03a41")
-theme_override_styles/hover = ExtResource("4_03a41")
-theme_override_styles/pressed_mirrored = ExtResource("4_03a41")
-theme_override_styles/pressed = ExtResource("4_03a41")
-theme_override_styles/normal_mirrored = ExtResource("4_03a41")
-theme_override_styles/normal = ExtResource("4_03a41")
-text = "Im done"
+offset_left = -63.0
+offset_top = -11.0
+offset_right = 1217.0
+offset_bottom = 709.0
+texture = ExtResource("2_rly4g")
 
 [node name="Hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_idgfh")
@@ -91,54 +97,95 @@ stream = ExtResource("3_idgfh")
 stream = ExtResource("4_08xlg")
 volume_db = 24.0
 
-[node name="Profit" type="Label" parent="."]
-layout_mode = 0
-offset_left = 289.0
-offset_top = 296.0
-offset_right = 448.0
-offset_bottom = 325.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("2_y52mc")
-theme_override_font_sizes/font_size = 30
-text = "You made: $0.00"
-
-[node name="BacktoMenu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 529.0
-offset_top = 525.0
-offset_right = 641.0
-offset_bottom = 561.0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0.709804)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 0.521569)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.647059)
-theme_override_colors/font_focus_color = Color(0.839216, 0.839216, 0.839216, 0.545098)
-theme_override_fonts/font = ExtResource("2_y52mc")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = ExtResource("4_03a41")
-theme_override_styles/disabled_mirrored = ExtResource("4_03a41")
-theme_override_styles/disabled = ExtResource("4_03a41")
-theme_override_styles/hover_pressed_mirrored = ExtResource("4_03a41")
-theme_override_styles/hover_pressed = ExtResource("4_03a41")
-theme_override_styles/hover_mirrored = ExtResource("4_03a41")
-theme_override_styles/hover = ExtResource("4_03a41")
-theme_override_styles/pressed_mirrored = ExtResource("4_03a41")
-theme_override_styles/pressed = ExtResource("4_03a41")
-theme_override_styles/normal_mirrored = ExtResource("4_03a41")
-theme_override_styles/normal = ExtResource("4_03a41")
-text = "Main menu"
-
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_y0wdt")
 volume_db = 10.894
 
-[connection signal="focus_entered" from="Retry" to="." method="_on_retry_focus_entered"]
-[connection signal="mouse_entered" from="Retry" to="." method="_on_retry_mouse_entered"]
-[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
-[connection signal="focus_entered" from="GiveUp" to="." method="_on_give_up_focus_entered"]
-[connection signal="mouse_entered" from="GiveUp" to="." method="_on_give_up_mouse_entered"]
-[connection signal="pressed" from="GiveUp" to="." method="_on_give_up_pressed"]
-[connection signal="focus_entered" from="BacktoMenu" to="." method="_on_backto_menu_focus_entered"]
-[connection signal="mouse_entered" from="BacktoMenu" to="." method="_on_backto_menu_mouse_entered"]
-[connection signal="pressed" from="BacktoMenu" to="." method="_on_backto_menu_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 232.0
+offset_top = 580.0
+offset_right = 909.0
+offset_bottom = 638.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Retry" type="Button" parent="HBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0.709804)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.47451)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.647059)
+theme_override_colors/font_focus_color = Color(0.839216, 0.839216, 0.839216, 0.545098)
+theme_override_colors/font_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("2_y52mc")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4orq8")
+theme_override_styles/disabled_mirrored = ExtResource("4_03a41")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_44oos")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4gsfy")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3iwnl")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_nanp4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4skgi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_v521k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xwokf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_cpv3i")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_npppg")
+text = "Again"
+
+[node name="BacktoMenu" type="Button" parent="HBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0.709804)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.521569)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.647059)
+theme_override_colors/font_focus_color = Color(0.839216, 0.839216, 0.839216, 0.545098)
+theme_override_colors/font_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("2_y52mc")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jeyci")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7l5ev")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hfhwi")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_pstyd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eh7pk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vbg5l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_e2jhk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yihgt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lavll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lw2hf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f502v")
+text = "Main menu"
+
+[node name="GiveUp" type="Button" parent="HBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0.709804)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 0.521569)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.647059)
+theme_override_colors/font_focus_color = Color(0.839216, 0.839216, 0.839216, 0.545098)
+theme_override_colors/font_color = Color(0.756863, 0.756863, 0.756863, 1)
+theme_override_fonts/font = ExtResource("2_y52mc")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kqkcl")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_03pu5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3ljm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_up4u8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lums7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jtgn8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_teg6y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2rr2c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xsfl8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_t0dsf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xr42")
+text = "Im done"
+
+[connection signal="focus_entered" from="HBoxContainer/Retry" to="." method="_on_retry_focus_entered"]
+[connection signal="mouse_entered" from="HBoxContainer/Retry" to="." method="_on_retry_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/BacktoMenu" to="." method="_on_backto_menu_focus_entered"]
+[connection signal="mouse_entered" from="HBoxContainer/BacktoMenu" to="." method="_on_backto_menu_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/BacktoMenu" to="." method="_on_backto_menu_pressed"]
+[connection signal="focus_entered" from="HBoxContainer/GiveUp" to="." method="_on_give_up_focus_entered"]
+[connection signal="mouse_entered" from="HBoxContainer/GiveUp" to="." method="_on_give_up_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/GiveUp" to="." method="_on_give_up_pressed"]

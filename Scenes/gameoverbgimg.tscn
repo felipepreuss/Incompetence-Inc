@@ -1,11 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg31fk3md4tee"]
+[gd_scene load_steps=2 format=3 uid="uid://b8y6vxfunc2ky"]
 
-[ext_resource type="Texture2D" uid="uid://bjhyofk1vl3la" path="res://Sprites/gameover_bg.png" id="1_meq5j"]
+[ext_resource type="Texture2D" uid="uid://wgs0o0b7dus0" path="res://Sprites/gameoverbgimg.png" id="1_hfg30"]
 
 [node name="GameOverbg" type="Node2D"]
 metadata/_edit_group_ = true
 
 [node name="GameoverBg" type="Sprite2D" parent="."]
 position = Vector2(579.5, 322.5)
-scale = Vector2(4.2, 3.4918)
-texture = ExtResource("1_meq5j")
+texture = ExtResource("1_hfg30")

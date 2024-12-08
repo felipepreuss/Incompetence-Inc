@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5wk16vaa67af" path="res://Scenes/bg.tscn" id="1_ciibd"]
 [ext_resource type="Script" path="res://Scenes/officetable.gd" id="1_sl71x"]
-[ext_resource type="PackedScene" uid="uid://b4ph6bvp1jdas" path="res://timer.tscn" id="3_rjkoh"]
+[ext_resource type="PackedScene" path="res://timer.tscn" id="3_rjkoh"]
 [ext_resource type="Texture2D" uid="uid://cjf3lvuenognj" path="res://Sprites/manilafolder.png" id="6_cj10d"]
 [ext_resource type="AudioStream" uid="uid://ckd0ggngalcn2" path="res://Sound/323387-Manilla_folder_-pages_being_turned_1-.mp3" id="7_kavjq"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="8_p7buf"]

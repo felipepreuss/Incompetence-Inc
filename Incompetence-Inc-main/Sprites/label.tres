@@ -1,8 +1,0 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://csra5s7s851xx"]
-
-[ext_resource type="FontFile" uid="uid://c6dv2q4s6gd5p" path="res://Sprites/Fpreuss.tres" id="1_gr4ix"]
-
-[resource]
-font = ExtResource("1_gr4ix")
-font_size = 19
-font_color = Color(0.466667, 0.396078, 0.537255, 1)

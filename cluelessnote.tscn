@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl1v7w60i67kq"]
+[gd_scene load_steps=4 format=3 uid="uid://dl6wg61t07n5"]
 
 [ext_resource type="Texture2D" uid="uid://ksivh2t4gqjo" path="res://Sprites/cluelessnote.svg" id="1_b6h1j"]
 [ext_resource type="Script" path="res://Scenes/cluelessnote.gd" id="2_qwaq5"]
