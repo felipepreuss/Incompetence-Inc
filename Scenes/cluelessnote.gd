@@ -119,6 +119,7 @@ func _process(delta: float) -> void:
 			scale = Vector2(0.9,0.9)
 		else:
 			no_trash = true
+			$"../Shredder/InsertedTrash".play()
 func _on_body(body: Node2D) -> void:
 	if body.is_in_group("Folder"):
 		no_corpo = true

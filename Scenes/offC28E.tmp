@@ -87,14 +87,14 @@ position = Vector2(382, 572)
 scale = Vector2(0.5, 0.544)
 texture = ExtResource("11_o1aol")
 
+[node name="InsertedTrash" type="AudioStreamPlayer2D" parent="Shredder"]
+stream = ExtResource("10_aagpr")
+
 [node name="Area2D" type="Area2D" parent="Shredder" groups=["Lixo"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shredder/Area2D"]
 position = Vector2(7.74438, -87.6975)
 shape = SubResource("RectangleShape2D_dvbko")
-
-[node name="InsertedTrash" type="AudioStreamPlayer2D" parent="Shredder"]
-stream = ExtResource("10_aagpr")
 
 [node name="Delay" type="Timer" parent="."]
 wait_time = 2.0
