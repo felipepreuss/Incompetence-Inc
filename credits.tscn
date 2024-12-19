@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dydqo66ipj7iv"]
+[gd_scene load_steps=17 format=3 uid="uid://dydqo66ipj7iv"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_gph15"]
 [ext_resource type="Texture2D" uid="uid://uhm38k0mayyi" path="res://Sprites/newcredbg.png" id="2_jqeny"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="2_o1wv4"]
-[ext_resource type="AudioStream" uid="uid://dr0kn6hhbrn3v" path="res://Sound/musicacredito.mp3" id="4_hsl5t"]
 [ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="5_hnc47"]
 [ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="6_kbdpv"]
 
@@ -69,6 +68,7 @@ offset_right = 613.0
 offset_bottom = 634.0
 
 [node name="Return_menu" type="Button" parent="VBoxContainer"]
+texture_filter = 3
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 0.733333)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.886275)
@@ -111,9 +111,6 @@ theme_override_font_sizes/font_size = 50
 text = "Preuss (Concept, game design and assets)
 VT (Programming)
 Kiiso (Background art and game icon)"
-
-[node name="credcredre" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_hsl5t")
 
 [connection signal="focus_entered" from="VBoxContainer/Return_menu" to="." method="_on_return_menu_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Return_menu" to="." method="_on_return_menu_mouse_entered"]

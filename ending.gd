@@ -10,3 +10,7 @@ func _on_menu_pressed():
 func on_quit_pressed():
 	data.play("In")
 	get_tree().quit()
+
+
+func _on_main_mouse_entered() -> void:
+	pass # Replace with function body.
