@@ -1,11 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://s1rjcmfgbki1"]
+[gd_scene load_steps=39 format=3 uid="uid://s1rjcmfgbki1"]
 
 [ext_resource type="Script" path="res://Scenes/gameover.gd" id="1_n4bfe"]
 [ext_resource type="Texture2D" uid="uid://cl8iiw8hg8tok" path="res://Sprites/gameoverbgimg.png" id="2_3s1a7"]
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="2_y52mc"]
 [ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="3_idgfh"]
 [ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="4_08xlg"]
-[ext_resource type="AudioStream" uid="uid://bn1pfooptr5t4" path="res://Sound/realm-of-the-mad-god-death-sound.mp3" id="7_y0wdt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0ftc"]
 
@@ -97,10 +96,6 @@ stream = ExtResource("3_idgfh")
 [node name="Pressed" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_08xlg")
 volume_db = 24.0
-
-[node name="Death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_y0wdt")
-volume_db = 10.894
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0

@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://btcsf6h4uq1qg"]
+[gd_scene load_steps=28 format=3 uid="uid://btcsf6h4uq1qg"]
 
 [ext_resource type="FontFile" uid="uid://c8dolumhrfhc2" path="res://Sprites/W95FA.ttf" id="1_fcavk"]
 [ext_resource type="Script" path="res://ending.gd" id="1_ru8wg"]
 [ext_resource type="Texture2D" uid="uid://d0ayog1s21xy2" path="res://Sprites/goodendingbg.png" id="2_1dedk"]
+[ext_resource type="AudioStream" uid="uid://cgdrcaqr4ulnf" path="res://Sound/button-202966.mp3" id="4_rriie"]
+[ext_resource type="AudioStream" uid="uid://ddqyyhj4r2bsg" path="res://Sound/menu-buttom-3-bibs-190018.mp3" id="5_o4fvw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7d2my"]
 
@@ -144,5 +146,15 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7gjej")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_joq4w")
 text = "Leave Game"
 
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(499, 502)
+stream = ExtResource("4_rriie")
+
+[node name="Pressed" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(499, 502)
+stream = ExtResource("5_o4fvw")
+
+[connection signal="mouse_entered" from="Menu" to="." method="_on_main_mouse_entered"]
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="mouse_entered" from="Leave" to="." method="_on_main_mouse_entered"]
 [connection signal="pressed" from="Leave" to="." method="on_quit_pressed"]

@@ -5,6 +5,7 @@ func _ready():
 	data.play("Out")
 func _on_menu_pressed():
 	data.play("In")
+	$Pressed.play()
 	get_tree().change_scene_to_file("res://Scenes/menumain.tscn")
 
 func on_quit_pressed():
@@ -13,4 +14,4 @@ func on_quit_pressed():
 
 
 func _on_main_mouse_entered() -> void:
-	pass # Replace with function body.
+	$Hover.play()
