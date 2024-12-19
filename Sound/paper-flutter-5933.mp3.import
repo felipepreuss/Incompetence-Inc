@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/paper-flutter-5933.mp3-34044d3957a5143d9828ab
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

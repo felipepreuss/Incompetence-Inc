@@ -119,6 +119,7 @@ position = Vector2(776, 280)
 stream = ExtResource("3_qdr51")
 
 [node name="Pressed" type="AudioStreamPlayer2D" parent="."]
+texture_filter = 3
 position = Vector2(776, 280)
 stream = ExtResource("3_evpcx")
 volume_db = 24.0

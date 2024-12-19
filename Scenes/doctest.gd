@@ -14,7 +14,7 @@ var items = ["Laptop", "Clothes", "Souvenirs", "Food Items", "Medicines", "Elect
 
 var invalid_items = ["Firearms", "Illegal Drugs", "Exotic Animals", "Endangered Species", "Explosive Device"]
 
-var nationalities = ["American", "British", "German", "French", "Chinese", "Indian", "Japanese", "Brazilian", "Canadian", "Australian"]
+var nationalities = ["America", "United Kingdom", "Germany", "France", "China", "India", "Japan", "Brazil", "Canada", "Australia"]
 
 var invalid_nationalities = ["Unknownlandian", "FakeCountryian", "InvalidNational", "Carioca", "Corinthians", "Indn"]
 
